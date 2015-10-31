@@ -24,7 +24,7 @@ testing/tests/jni/cp
 testing/tests/jni/out.*
 testing/tests/SPECjbb2000/results
 .hg/*
-.hgignore
+.hg*
 
 syntax:regexp
 ^components
