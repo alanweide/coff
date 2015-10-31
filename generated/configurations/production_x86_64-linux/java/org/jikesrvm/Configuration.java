@@ -109,7 +109,7 @@ public abstract class Configuration {
   public static final boolean BuildWithGCTrace = false;
   public static final boolean BuildWithGCSpy = false;
   
-  public static final String RVM_VERSION_STRING = "Jikes RVM 3.1.3 (rc951b3ea1d7e66219fcfc260a3f6666cc7d78a78+)";
+  public static final String RVM_VERSION_STRING = "Jikes RVM 3.1.3 (r)";
   public static final String RVM_CONFIGURATION = "production";
 
   /**
