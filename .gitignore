@@ -30,7 +30,6 @@ testing/tests/SPECjbb2000/results
 /.externalToolBuilders
 /components
 /dist
-/eclipse
 /generated
 /results
 /target
