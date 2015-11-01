@@ -666,6 +666,7 @@ public class CommandLineArgs {
         case ENABLE_COFF:
         	VM.sysWriteln("coff enabled!");
         	// TODO Coff init
+        	
         	break;
         	
           // -------------------------------------------------------------------
