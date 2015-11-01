@@ -79,7 +79,12 @@ public class CommandLineArgs {
     BOOTCLASSPATH_P_ARG,
     BOOTCLASSPATH_A_ARG,
     BOOTSTRAP_CLASSES_ARG,
-    AVAILABLE_PROCESSORS_ARG
+    AVAILABLE_PROCESSORS_ARG,
+    
+    // -----------------------------------------------//
+    // The following arguments are coff-specific.      //
+    // -----------------------------------------------//
+    ENABLE_COFF
   }
 
   /** Represent a single command line prefix */
@@ -211,7 +216,10 @@ public class CommandLineArgs {
 
                                             /* Silently ignored */
                                             new Prefix("-Xverify", PrefixType.VERIFY_ARG),
-
+                                            
+                                            /* Coff */
+                                            new Prefix("-Xcoff", PrefixType.ENABLE_COFF),
+                                            
                                             app_prefix};
 
   static {
@@ -652,6 +660,14 @@ public class CommandLineArgs {
           }
           break;
 
+          // -------------------------------------------------------------------
+          // Coff
+          // -------------------------------------------------------------------
+        case ENABLE_COFF:
+        	VM.sysWriteln("coff enabled!");
+        	// TODO Coff init
+        	break;
+        	
           // -------------------------------------------------------------------
           // Other arguments to the core VM
           // -------------------------------------------------------------------
