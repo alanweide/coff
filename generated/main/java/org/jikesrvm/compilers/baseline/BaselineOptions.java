@@ -21,8 +21,8 @@ import org.jikesrvm.VM;
  * Note: This file is mechanically generated from BaselineOptions.template
  *       and MasterOptions.template
  * <p>
- * Note: Boolean options are defined in /home/alan/Developer/jikesrvm/rvm/src-generated/options/BooleanOptions.baseline.dat /home/alan/Developer/jikesrvm/rvm/src-generated/options/SharedBooleanOptions.dat
- *       All other options are defined in /home/alan/Developer/jikesrvm/rvm/src-generated/options/ValueOptions.baseline.dat /home/alan/Developer/jikesrvm/rvm/src-generated/options/SharedValueOptions.dat
+ * Note: Boolean options are defined in /home/sanjana/git/coff/rvm/src-generated/options/BooleanOptions.baseline.dat /home/sanjana/git/coff/rvm/src-generated/options/SharedBooleanOptions.dat
+ *       All other options are defined in /home/sanjana/git/coff/rvm/src-generated/options/ValueOptions.baseline.dat /home/sanjana/git/coff/rvm/src-generated/options/SharedValueOptions.dat
  *       (value, enumeration, bitmask)
  *
  **/

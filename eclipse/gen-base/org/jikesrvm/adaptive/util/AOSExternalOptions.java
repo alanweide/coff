@@ -22,8 +22,8 @@ import org.jikesrvm.CommandLineArgs;
  * Note: This file is mechanically generated from AOSOptions.template
  *       and MasterOptions.template
  * <p>
- * Note: Boolean options are defined in /home/alan/Developer/jikesrvm/rvm/src-generated/options/BooleanOptions.aos.dat
- *       All other options are defined in /home/alan/Developer/jikesrvm/rvm/src-generated/options/ValueOptions.aos.dat
+ * Note: Boolean options are defined in /home/sanjana/git/coff/rvm/src-generated/options/BooleanOptions.aos.dat
+ *       All other options are defined in /home/sanjana/git/coff/rvm/src-generated/options/ValueOptions.aos.dat
  *       (value, enumeration, bitmask)
  *
  **/

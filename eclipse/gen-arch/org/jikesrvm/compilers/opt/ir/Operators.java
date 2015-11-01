@@ -16,7 +16,7 @@
  * The input files are:
  *  Operators.template
  *  OperatorList.dat
- *  /home/alan/Developer/jikesrvm/rvm/src-generated/opt-ir/ia32/OperatorList.dat
+ *  /home/sanjana/git/coff/rvm/src-generated/opt-ir/ia32/OperatorList.dat
  */
 
 package org.jikesrvm.compilers.opt.ir;

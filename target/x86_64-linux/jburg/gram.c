@@ -62,7 +62,7 @@
 
 
 /* Copy the first part of user declarations.  */
-#line 1 "/home/alan/Developer/jikesrvm/rvm/src-generated/opt-burs/jburg/gram.y" /* yacc.c:339  */
+#line 1 "/home/sanjana/git/coff/rvm/src-generated/opt-burs/jburg/gram.y" /* yacc.c:339  */
 
 /*
  * (C) Copyright IBM Corp. 2001
@@ -73,7 +73,7 @@
 static int yylineno = 0;
 static int yylex(void);
 
-#line 77 "/home/alan/Developer/jikesrvm/target/x86_64-linux/jburg/gram.c" /* yacc.c:339  */
+#line 77 "/home/sanjana/git/coff/target/x86_64-linux/jburg/gram.c" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -120,13 +120,13 @@ extern int yydebug;
 typedef union YYSTYPE YYSTYPE;
 union YYSTYPE
 {
-#line 11 "/home/alan/Developer/jikesrvm/rvm/src-generated/opt-burs/jburg/gram.y" /* yacc.c:355  */
+#line 11 "/home/sanjana/git/coff/rvm/src-generated/opt-burs/jburg/gram.y" /* yacc.c:355  */
 
 	int n;
 	char *string;
 	Tree tree;
 
-#line 130 "/home/alan/Developer/jikesrvm/target/x86_64-linux/jburg/gram.c" /* yacc.c:355  */
+#line 130 "/home/sanjana/git/coff/target/x86_64-linux/jburg/gram.c" /* yacc.c:355  */
 };
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1
@@ -141,7 +141,7 @@ int yyparse (void);
 
 /* Copy the second part of user declarations.  */
 
-#line 145 "/home/alan/Developer/jikesrvm/target/x86_64-linux/jburg/gram.c" /* yacc.c:358  */
+#line 145 "/home/sanjana/git/coff/target/x86_64-linux/jburg/gram.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -1229,82 +1229,82 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 25 "/home/alan/Developer/jikesrvm/rvm/src-generated/opt-burs/jburg/gram.y" /* yacc.c:1646  */
+#line 25 "/home/sanjana/git/coff/rvm/src-generated/opt-burs/jburg/gram.y" /* yacc.c:1646  */
     { yylineno = 0; }
-#line 1235 "/home/alan/Developer/jikesrvm/target/x86_64-linux/jburg/gram.c" /* yacc.c:1646  */
+#line 1235 "/home/sanjana/git/coff/target/x86_64-linux/jburg/gram.c" /* yacc.c:1646  */
     break;
 
   case 3:
-#line 26 "/home/alan/Developer/jikesrvm/rvm/src-generated/opt-burs/jburg/gram.y" /* yacc.c:1646  */
+#line 26 "/home/sanjana/git/coff/rvm/src-generated/opt-burs/jburg/gram.y" /* yacc.c:1646  */
     { yylineno = 0; }
-#line 1241 "/home/alan/Developer/jikesrvm/target/x86_64-linux/jburg/gram.c" /* yacc.c:1646  */
+#line 1241 "/home/sanjana/git/coff/target/x86_64-linux/jburg/gram.c" /* yacc.c:1646  */
     break;
 
   case 7:
-#line 34 "/home/alan/Developer/jikesrvm/rvm/src-generated/opt-burs/jburg/gram.y" /* yacc.c:1646  */
+#line 34 "/home/sanjana/git/coff/rvm/src-generated/opt-burs/jburg/gram.y" /* yacc.c:1646  */
     {
 		if (nonterm((yyvsp[-1].string))->number != 1)
 			yyerror("redeclaration of the start symbol\n");
 		}
-#line 1250 "/home/alan/Developer/jikesrvm/target/x86_64-linux/jburg/gram.c" /* yacc.c:1646  */
+#line 1250 "/home/sanjana/git/coff/target/x86_64-linux/jburg/gram.c" /* yacc.c:1646  */
     break;
 
   case 9:
-#line 39 "/home/alan/Developer/jikesrvm/rvm/src-generated/opt-burs/jburg/gram.y" /* yacc.c:1646  */
+#line 39 "/home/sanjana/git/coff/rvm/src-generated/opt-burs/jburg/gram.y" /* yacc.c:1646  */
     { yyerrok; }
-#line 1256 "/home/alan/Developer/jikesrvm/target/x86_64-linux/jburg/gram.c" /* yacc.c:1646  */
+#line 1256 "/home/sanjana/git/coff/target/x86_64-linux/jburg/gram.c" /* yacc.c:1646  */
     break;
 
   case 11:
-#line 43 "/home/alan/Developer/jikesrvm/rvm/src-generated/opt-burs/jburg/gram.y" /* yacc.c:1646  */
+#line 43 "/home/sanjana/git/coff/rvm/src-generated/opt-burs/jburg/gram.y" /* yacc.c:1646  */
     { term((yyvsp[-2].string), (yyvsp[0].n)); }
-#line 1262 "/home/alan/Developer/jikesrvm/target/x86_64-linux/jburg/gram.c" /* yacc.c:1646  */
+#line 1262 "/home/sanjana/git/coff/target/x86_64-linux/jburg/gram.c" /* yacc.c:1646  */
     break;
 
   case 13:
-#line 47 "/home/alan/Developer/jikesrvm/rvm/src-generated/opt-burs/jburg/gram.y" /* yacc.c:1646  */
+#line 47 "/home/sanjana/git/coff/rvm/src-generated/opt-burs/jburg/gram.y" /* yacc.c:1646  */
     { rule((yyvsp[-5].string), (yyvsp[-3].tree), "", (yyvsp[-1].string)); }
-#line 1268 "/home/alan/Developer/jikesrvm/target/x86_64-linux/jburg/gram.c" /* yacc.c:1646  */
+#line 1268 "/home/sanjana/git/coff/target/x86_64-linux/jburg/gram.c" /* yacc.c:1646  */
     break;
 
   case 15:
-#line 49 "/home/alan/Developer/jikesrvm/rvm/src-generated/opt-burs/jburg/gram.y" /* yacc.c:1646  */
+#line 49 "/home/sanjana/git/coff/rvm/src-generated/opt-burs/jburg/gram.y" /* yacc.c:1646  */
     { yyerrok; }
-#line 1274 "/home/alan/Developer/jikesrvm/target/x86_64-linux/jburg/gram.c" /* yacc.c:1646  */
+#line 1274 "/home/sanjana/git/coff/target/x86_64-linux/jburg/gram.c" /* yacc.c:1646  */
     break;
 
   case 16:
-#line 52 "/home/alan/Developer/jikesrvm/rvm/src-generated/opt-burs/jburg/gram.y" /* yacc.c:1646  */
+#line 52 "/home/sanjana/git/coff/rvm/src-generated/opt-burs/jburg/gram.y" /* yacc.c:1646  */
     { nonterm((yyval.string) = (yyvsp[0].string)); }
-#line 1280 "/home/alan/Developer/jikesrvm/target/x86_64-linux/jburg/gram.c" /* yacc.c:1646  */
+#line 1280 "/home/sanjana/git/coff/target/x86_64-linux/jburg/gram.c" /* yacc.c:1646  */
     break;
 
   case 17:
-#line 55 "/home/alan/Developer/jikesrvm/rvm/src-generated/opt-burs/jburg/gram.y" /* yacc.c:1646  */
+#line 55 "/home/sanjana/git/coff/rvm/src-generated/opt-burs/jburg/gram.y" /* yacc.c:1646  */
     { (yyval.tree) = tree((yyvsp[0].string),  0,  0); }
-#line 1286 "/home/alan/Developer/jikesrvm/target/x86_64-linux/jburg/gram.c" /* yacc.c:1646  */
+#line 1286 "/home/sanjana/git/coff/target/x86_64-linux/jburg/gram.c" /* yacc.c:1646  */
     break;
 
   case 18:
-#line 56 "/home/alan/Developer/jikesrvm/rvm/src-generated/opt-burs/jburg/gram.y" /* yacc.c:1646  */
+#line 56 "/home/sanjana/git/coff/rvm/src-generated/opt-burs/jburg/gram.y" /* yacc.c:1646  */
     { (yyval.tree) = tree((yyvsp[-3].string), (yyvsp[-1].tree),  0); }
-#line 1292 "/home/alan/Developer/jikesrvm/target/x86_64-linux/jburg/gram.c" /* yacc.c:1646  */
+#line 1292 "/home/sanjana/git/coff/target/x86_64-linux/jburg/gram.c" /* yacc.c:1646  */
     break;
 
   case 19:
-#line 57 "/home/alan/Developer/jikesrvm/rvm/src-generated/opt-burs/jburg/gram.y" /* yacc.c:1646  */
+#line 57 "/home/sanjana/git/coff/rvm/src-generated/opt-burs/jburg/gram.y" /* yacc.c:1646  */
     { (yyval.tree) = tree((yyvsp[-5].string), (yyvsp[-3].tree), (yyvsp[-1].tree)); }
-#line 1298 "/home/alan/Developer/jikesrvm/target/x86_64-linux/jburg/gram.c" /* yacc.c:1646  */
+#line 1298 "/home/sanjana/git/coff/target/x86_64-linux/jburg/gram.c" /* yacc.c:1646  */
     break;
 
   case 20:
-#line 60 "/home/alan/Developer/jikesrvm/rvm/src-generated/opt-burs/jburg/gram.y" /* yacc.c:1646  */
+#line 60 "/home/sanjana/git/coff/rvm/src-generated/opt-burs/jburg/gram.y" /* yacc.c:1646  */
     { if (*(yyvsp[0].string) == 0) (yyval.string) = xstrdup("0"); }
-#line 1304 "/home/alan/Developer/jikesrvm/target/x86_64-linux/jburg/gram.c" /* yacc.c:1646  */
+#line 1304 "/home/sanjana/git/coff/target/x86_64-linux/jburg/gram.c" /* yacc.c:1646  */
     break;
 
 
-#line 1308 "/home/alan/Developer/jikesrvm/target/x86_64-linux/jburg/gram.c" /* yacc.c:1646  */
+#line 1308 "/home/sanjana/git/coff/target/x86_64-linux/jburg/gram.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1532,7 +1532,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 62 "/home/alan/Developer/jikesrvm/rvm/src-generated/opt-burs/jburg/gram.y" /* yacc.c:1906  */
+#line 62 "/home/sanjana/git/coff/rvm/src-generated/opt-burs/jburg/gram.y" /* yacc.c:1906  */
 
 #include <assert.h>
 #include <stdarg.h>
