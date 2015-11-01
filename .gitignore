@@ -27,6 +27,7 @@ testing/tests/SPECjbb2000/results
 
 *.class
 
+/.externalToolBuilders
 /components
 /dist
 /eclipse
