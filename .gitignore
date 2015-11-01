@@ -1,4 +1,3 @@
-syntax:glob
 jikesrvm.iml
 .ant.properties
 .project
@@ -26,11 +25,10 @@ testing/tests/SPECjbb2000/results
 .hg/*
 .hg*
 
-syntax:regexp
-^components
-^dist
-^eclipse
-^generated
-^results
-^target
+/components
+/dist
+/eclipse
+/generated
+/results
+/target
 
