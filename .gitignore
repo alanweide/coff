@@ -25,6 +25,8 @@ testing/tests/SPECjbb2000/results
 .hg/*
 .hg*
 
+*.class
+
 /components
 /dist
 /eclipse
