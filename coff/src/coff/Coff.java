@@ -26,17 +26,16 @@ public class Coff {
 	private static int[] curThreadCounters;
 
 	private static int lineToProfile;
-	private static double pctOptimization;
+	private static double optimizationLevel;
 	private static int curGlobalCounter;
 
 	public static void start() {
 		if (DEBUG) {
 			VM.sysWriteln("Starting coff...");
 		}
-		// while (!VMexecuting) {
 		while (VM.mainThread.isAlive()) {
 			lineToProfile = 7;
-			pctOptimization = 1.0;
+			optimizationLevel = 1.0;
 			try {
 				Thread.sleep(COOLDOWN_TIME);
 				beginExperiment();
@@ -48,6 +47,7 @@ public class Coff {
 
 	private static void beginExperiment() throws InterruptedException {
 		VM.sysWriteln("Beginning experiment on line " + lineToProfile);
+
 		Thread.sleep(PERFORMANCE_EXPERIMENT_DURATION);
 	}
 }
