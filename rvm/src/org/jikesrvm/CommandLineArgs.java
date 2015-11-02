@@ -25,8 +25,6 @@ import org.jikesrvm.compilers.common.RuntimeCompiler;
 import org.jikesrvm.mm.mminterface.MemoryManager;
 import org.jikesrvm.scheduler.RVMThread;
 
-import coff.Coff;
-
 /**
  * Command line option processing iwth arbitrary prefix support.
  */
@@ -671,8 +669,7 @@ public class CommandLineArgs {
 			case ENABLE_COFF:
 				// VM.sysWriteln("coff enabled!");
 				// TODO Coff init
-				Coff.start();
-
+				VM.coffEnabled = true;
 				break;
 
 			// -------------------------------------------------------------------

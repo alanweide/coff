@@ -103,5 +103,5 @@ public class Properties extends Options {
 	public static final int maxSystemTroubleRecursionDepthBeforeWeStopVMSysWrite = 3;
 
 	// Coff
-	public static final boolean CoffEnabled = false;
+	public static boolean coffEnabled = false;
 }

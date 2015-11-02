@@ -38,6 +38,7 @@
   <property name="main.java" location="rvm/src"/>
   <property name="test.java" location="rvm/test-src/"/>
   <property name="mmtk.java" location="MMTk/src"/>
+	<property name="coff.java" location="coff/src"/>
   <property name="mmtk-harness.java" location="MMTk/harness/src"/>
   <property name="mmtk-harness-vmmagic.java" location="MMTk/harness/vmmagic"/>
   <property name="mmtk-vm-rvm.java" location="MMTk/ext/vm/jikesrvm"/>
@@ -1193,7 +1194,7 @@ Check to make sure all required properties are specified. This includes properti
                source="${rvm.java.version}"
                target="${rvm.java.version}"
                srcdir="${main.java}:${classlib.library-interface.common.java}:${classlib.library-interface.cpl.java}:${classlib.library-interface.non-cpl.java}:${classlib.library-interface.non-cpl2.java}:${mmtk-vm-rvm.java}:${tuningforklib.java}"
-               sourcepath="${mmtk.java}:${options.java}:${generated.java}:${generated.config.java}:${generated.arch.java}:${main.java}:${mmtk-vm-rvm.java}:${tuningforklib.java}"
+               sourcepath="${coff.java}:${mmtk.java}:${options.java}:${generated.java}:${generated.config.java}:${generated.arch.java}:${main.java}:${mmtk-vm-rvm.java}:${tuningforklib.java}"
                includeantruntime="false">
           <bootclasspath>
             <pathelement location="${classpath.lib.dir}/classpath.jar"/>
@@ -2273,6 +2274,9 @@ target.jni-suffix=${target.jni-suffix}
       <fileset dir="${generated.vmmagic.arch.java}">
         <include name="**/*.java"/>
       </fileset>
+        <fileset dir="${coff.java}">
+          <include name="**/*.java"/>
+        </fileset>
     </pmd>
   </target>
 
