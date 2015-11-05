@@ -89,7 +89,6 @@ public class Coff {
 					VM.sysWriteln("Dumping stack of thread...");
 					RVMThread.dumpStack(thr.contextRegisters.getInnermostFramePointer());
 				}
-				sysCall.sysNanoSleep((long) (1000L * 1000L * PERFORMANCE_EXPERIMENT_DURATION * optimizationLevel));
 				thr.endPairHandshake();
 			}
 		}
