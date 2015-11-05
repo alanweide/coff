@@ -558,7 +558,7 @@ public class VM extends Properties implements Constants, ExitStatus {
 					Coff.start();
 				}
 			});
-			coffThread.run();
+			coffThread.start();
 		}
 
 		// End of boot thread.

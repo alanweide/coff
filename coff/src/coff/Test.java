@@ -4,13 +4,13 @@ import java.util.Date;
 
 public class Test {
 	private static void a() {
-		for (long i = 0; i < 10000000000L; i++) {
+		for (int i = 0; i < 2000000000; i++) {
 
 		}
 	}
 
 	private static void b() {
-		for (long i = 0; i < 9000000000L; i++) {
+		for (int i = 0; i < 1900000000; i++) {
 
 		}
 	}
@@ -31,8 +31,9 @@ public class Test {
 				b();
 			}
 		});
-		a.run();
-		b.run();
+		a.start();
+		b.start();
+		System.out.println("Started both threads");
 		a.join();
 		b.join();
 		double secondsElapsed = (new Date().getTime() - start.getTime()) / 1000.0;

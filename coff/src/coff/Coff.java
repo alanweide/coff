@@ -1,5 +1,7 @@
 package coff;
 
+import static org.jikesrvm.runtime.SysCall.sysCall;
+
 import org.jikesrvm.VM;
 import org.jikesrvm.scheduler.RVMThread;
 
@@ -18,7 +20,7 @@ public class Coff {
 	private static final int SAMPLE_GRANULARITY = 10;
 
 	/**
-	 * Time after experiment is completed to "cool down"
+	 * Time in ms after experiment is completed to "cool down"
 	 */
 	private static final int COOLDOWN_TIME = 10;
 
@@ -37,7 +39,7 @@ public class Coff {
 			lineToProfile = 7;
 			optimizationLevel = 1.0;
 			try {
-				Thread.sleep(COOLDOWN_TIME);
+				sysCall.sysNanoSleep(1000L * 1000L * COOLDOWN_TIME);
 				beginExperiment();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
@@ -47,7 +49,40 @@ public class Coff {
 
 	private static void beginExperiment() throws InterruptedException {
 		VM.sysWriteln("Beginning experiment on line " + lineToProfile);
+		// RVMThread.dumpVirtualMachine();
+		VM.sysWriteln("Attempting to dump the stack of all other live threads");
+		// VM.sysWriteln("This is somewhat risky since if the thread is running
+		// we're going to be quite confused");
+		// for (int i = 0; i < RVMThread.numThreads; i++) {
+		// RVMThread thr = RVMThread.threads[i];
+		// if (thr != null && thr != RVMThread.getCurrentThread() &&
+		// thr.isAlive() && !thr.isDaemonThread()
+		// && !thr.isBootThread() && !thr.isSystemThread()) {
+		// thr.suspend();
+		// thr.dump();
+		// // PNT: FIXME: this won't work so well since the context
+		// // registers
+		// // don't tend to have sane values
+		// if (thr.contextRegisters != null && !thr.ignoreHandshakesAndGC()) {
+		// RVMThread.dumpStack(thr.contextRegisters.getInnermostFramePointer());
+		// }
+		// thr.resume();
+		// }
+		// }
+		RVMThread.acctLock.lockNoHandshake();
+		VM.sysWriteln("Dumping all live threads");
+		for (int i = 0; i < RVMThread.numThreads; ++i) {
+			RVMThread thr = RVMThread.threads[i];
+			if (thr != null && thr.isAlive() && !thr.isBootThread() && !thr.isDaemonThread() && !thr.isSystemThread()) {
+				thr.dump();
+				VM.sysWriteln();
+				if (thr.contextRegisters != null && thr.ignoreHandshakesAndGC()) {
+					// RVMThread.dumpStack(thr.contextRegisters.getInnermostFramePointer());
+				}
+			}
+		}
+		RVMThread.acctLock.unlock();
 
-		Thread.sleep(PERFORMANCE_EXPERIMENT_DURATION);
+		sysCall.sysNanoSleep(1000L * 1000L * PERFORMANCE_EXPERIMENT_DURATION);
 	}
 }
