@@ -552,13 +552,7 @@ public class VM extends Properties implements Constants, ExitStatus {
 		mainThread.start();
 
 		if (VM.coffEnabled) {
-			coffThread = new Thread(new Runnable() {
-				@Override
-				public void run() {
-					Coff.start();
-				}
-			});
-			coffThread.start();
+			coffThread = Coff.start();
 		}
 
 		// End of boot thread.

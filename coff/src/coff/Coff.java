@@ -31,20 +31,28 @@ public class Coff {
 	private static double optimizationLevel;
 	private static int curGlobalCounter;
 
-	public static void start() {
+	public static Thread start() {
 		if (DEBUG) {
 			VM.sysWriteln("Starting coff...");
 		}
-		while (VM.mainThread.isAlive()) {
-			lineToProfile = 7;
-			optimizationLevel = 1.0;
-			try {
-				sysCall.sysNanoSleep(1000L * 1000L * COOLDOWN_TIME);
-				beginExperiment();
-			} catch (InterruptedException e) {
-				e.printStackTrace();
+		Thread coffThread = new Thread(new Runnable() {
+
+			@Override
+			public void run() {
+				while (VM.mainThread.isAlive()) {
+					lineToProfile = 7;
+					optimizationLevel = 0.5;
+					try {
+						// sysCall.sysNanoSleep(1000L * 1000L * COOLDOWN_TIME);
+						beginExperiment();
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
 			}
-		}
+		});
+		coffThread.start();
+		return coffThread;
 	}
 
 	private static void beginExperiment() throws InterruptedException {
@@ -74,11 +82,15 @@ public class Coff {
 		for (int i = 0; i < RVMThread.numThreads; ++i) {
 			RVMThread thr = RVMThread.threads[i];
 			if (thr != null && thr.isAlive() && !thr.isBootThread() && !thr.isDaemonThread() && !thr.isSystemThread()) {
+				thr.beginPairHandshake();
 				thr.dump();
 				VM.sysWriteln();
-				if (thr.contextRegisters != null && thr.ignoreHandshakesAndGC()) {
-					// RVMThread.dumpStack(thr.contextRegisters.getInnermostFramePointer());
+				if (thr.contextRegisters != null && !thr.ignoreHandshakesAndGC()) {
+					VM.sysWriteln("Dumping stack of thread...");
+					RVMThread.dumpStack(thr.contextRegisters.getInnermostFramePointer());
 				}
+				sysCall.sysNanoSleep((long) (1000L * 1000L * PERFORMANCE_EXPERIMENT_DURATION * optimizationLevel));
+				thr.endPairHandshake();
 			}
 		}
 		RVMThread.acctLock.unlock();
