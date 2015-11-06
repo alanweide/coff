@@ -5291,6 +5291,121 @@ public final class RVMThread extends ThreadContext implements Constants {
 	}
 
 	/**
+	 * Get a (stopped) thread's stack.
+	 *
+	 * @param ip
+	 *            instruction pointer for first frame to dump
+	 * @param fp
+	 *            frame pointer for first frame to dump
+	 */
+	// public static StackTrace.Element[] getStack(Address ip, Address fp) {
+	// boolean b = Monitor.lockNoHandshake(dumpLock);
+	// RVMThread t = getCurrentThread();
+	// ++t.inDumpStack;
+	// if (t.inDumpStack > 1 && t.inDumpStack <=
+	// VM.maxSystemTroubleRecursionDepth
+	// + VM.maxSystemTroubleRecursionDepthBeforeWeStopVMSysWrite) {
+	// VM.sysWrite("RVMThread.dumpStack(): in a recursive call, ");
+	// VM.sysWrite(t.inDumpStack);
+	// VM.sysWriteln(" deep.");
+	// }
+	// if (t.inDumpStack > VM.maxSystemTroubleRecursionDepth) {
+	// VM.dieAbruptlyRecursiveSystemTrouble();
+	// if (VM.VerifyAssertions)
+	// VM._assert(VM.NOT_REACHED);
+	// }
+	//
+	// if (!isAddressValidFramePointer(fp)) {
+	// VM.sysWrite("Bogus looking frame pointer: ", fp);
+	// VM.sysWriteln(" not dumping stack");
+	// } else {
+	// try {
+	// VM.sysWriteln("-- Stack --");
+	// int i = 0;
+	// while
+	// (Magic.getCallerFramePointer(fp).NE(StackframeLayoutConstants.STACKFRAME_SENTINEL_FP))
+	// {
+	//
+	// // if code is outside of RVM heap, assume it to be native
+	// // code,
+	// // skip to next frame
+	// if (!MemoryManager.addressInVM(ip)) {
+	// showMethod("native frame", fp);
+	// ip = Magic.getReturnAddress(fp);
+	// fp = Magic.getCallerFramePointer(fp);
+	// } else {
+	//
+	// int compiledMethodId = Magic.getCompiledMethodID(fp);
+	// VM.sysWrite("(");
+	// VM.sysWrite(fp);
+	// VM.sysWrite(" ");
+	// VM.sysWrite(compiledMethodId);
+	// VM.sysWrite(")");
+	// if (compiledMethodId == StackframeLayoutConstants.INVISIBLE_METHOD_ID) {
+	// showMethod("invisible method", fp);
+	// } else {
+	// // normal java frame(s)
+	// CompiledMethod compiledMethod =
+	// CompiledMethods.getCompiledMethod(compiledMethodId);
+	// if (compiledMethod == null) {
+	// showMethod(compiledMethodId, fp);
+	// } else if (compiledMethod.getCompilerType() == CompiledMethod.TRAP) {
+	// showMethod("hardware trap", fp);
+	// } else {
+	// RVMMethod method = compiledMethod.getMethod();
+	// Offset instructionOffset = compiledMethod.getInstructionOffset(ip);
+	// int lineNumber =
+	// compiledMethod.findLineNumberForInstruction(instructionOffset);
+	// boolean frameShown = false;
+	// if (VM.BuildForOptCompiler && compiledMethod.getCompilerType() ==
+	// CompiledMethod.OPT) {
+	// OptCompiledMethod optInfo = (OptCompiledMethod) compiledMethod;
+	// // Opt stack frames may contain multiple
+	// // inlined methods.
+	// OptMachineCodeMap map = optInfo.getMCMap();
+	// int iei = map.getInlineEncodingForMCOffset(instructionOffset);
+	// if (iei >= 0) {
+	// int[] inlineEncoding = map.inlineEncoding;
+	// int bci = map.getBytecodeIndexForMCOffset(instructionOffset);
+	// for (; iei >= 0; iei = OptEncodedCallSiteTree.getParent(iei,
+	// inlineEncoding)) {
+	// int mid = OptEncodedCallSiteTree.getMethodID(iei, inlineEncoding);
+	// method = MemberReference.getMemberRef(mid).asMethodReference()
+	// .getResolvedMember();
+	// lineNumber = ((NormalMethod) method).getLineNumberForBCIndex(bci);
+	// showMethod(method, lineNumber, fp);
+	// if (iei > 0) {
+	// bci = OptEncodedCallSiteTree.getByteCodeOffset(iei, inlineEncoding);
+	// }
+	// }
+	// frameShown = true;
+	// }
+	// }
+	// if (!frameShown) {
+	// showMethod(method, lineNumber, fp);
+	// }
+	// }
+	// }
+	// ip = Magic.getReturnAddress(fp);
+	// fp = Magic.getCallerFramePointer(fp);
+	// }
+	// if (!isAddressValidFramePointer(fp)) {
+	// VM.sysWrite("Bogus looking frame pointer: ", fp);
+	// VM.sysWriteln(" end of stack dump");
+	// break;
+	// }
+	// } // end while
+	// } catch (Throwable th) {
+	// VM.sysWriteln("Something bad killed the stack dump. The last frame
+	// pointer was: ", fp);
+	// }
+	// }
+	// --t.inDumpStack;
+	//
+	// Monitor.unlock(b, dumpLock);
+	// }
+
+	/**
 	 * Return true if the supplied address could be a valid frame pointer. To
 	 * check for validity we make sure the frame pointer is in one of the
 	 * spaces;
