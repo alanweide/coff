@@ -1,8 +1,8 @@
 jikesrvm.iml
 .ant.properties
-.project
-.settings
-.classpath
+#.project
+#.settings
+#.classpath
 .pmd
 .checkstyle
 MMTk/harness/src-generated/org/mmtk/harness/lang/parser/*.java
