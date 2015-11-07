@@ -5291,6 +5291,22 @@ public final class RVMThread extends ThreadContext implements Constants {
 	}
 
 	/**
+	 * Dump state of a (stopped) thread's stack.
+	 *
+	 * @param fp
+	 *            address of starting frame. first frame output is the calling
+	 *            frame of passed frame
+	 */
+	// public static Element[] getStack(Address fp) {
+	// if (VM.VerifyAssertions) {
+	// VM._assert(VM.runningVM);
+	// }
+	// Address ip = Magic.getReturnAddress(fp);
+	// fp = Magic.getCallerFramePointer(fp);
+	// return getStack(ip, fp);
+	// }
+
+	/**
 	 * Get a (stopped) thread's stack.
 	 *
 	 * @param ip
@@ -5298,9 +5314,10 @@ public final class RVMThread extends ThreadContext implements Constants {
 	 * @param fp
 	 *            frame pointer for first frame to dump
 	 */
-	// public static StackTrace.Element[] getStack(Address ip, Address fp) {
+	// public static Element[] getStack(Address ip, Address fp) {
 	// boolean b = Monitor.lockNoHandshake(dumpLock);
 	// RVMThread t = getCurrentThread();
+	// List<Element> elements = new ArrayList<Element>();
 	// ++t.inDumpStack;
 	// if (t.inDumpStack > 1 && t.inDumpStack <=
 	// VM.maxSystemTroubleRecursionDepth
@@ -5321,7 +5338,6 @@ public final class RVMThread extends ThreadContext implements Constants {
 	// } else {
 	// try {
 	// VM.sysWriteln("-- Stack --");
-	// int i = 0;
 	// while
 	// (Magic.getCallerFramePointer(fp).NE(StackframeLayoutConstants.STACKFRAME_SENTINEL_FP))
 	// {
@@ -5343,14 +5359,17 @@ public final class RVMThread extends ThreadContext implements Constants {
 	// VM.sysWrite(")");
 	// if (compiledMethodId == StackframeLayoutConstants.INVISIBLE_METHOD_ID) {
 	// showMethod("invisible method", fp);
+	// // Don't create an element for this method
 	// } else {
 	// // normal java frame(s)
 	// CompiledMethod compiledMethod =
 	// CompiledMethods.getCompiledMethod(compiledMethodId);
 	// if (compiledMethod == null) {
 	// showMethod(compiledMethodId, fp);
+	// // Don't create an element for this method
 	// } else if (compiledMethod.getCompilerType() == CompiledMethod.TRAP) {
 	// showMethod("hardware trap", fp);
+	// // Don't create an element for this method
 	// } else {
 	// RVMMethod method = compiledMethod.getMethod();
 	// Offset instructionOffset = compiledMethod.getInstructionOffset(ip);
@@ -5374,6 +5393,7 @@ public final class RVMThread extends ThreadContext implements Constants {
 	// .getResolvedMember();
 	// lineNumber = ((NormalMethod) method).getLineNumberForBCIndex(bci);
 	// showMethod(method, lineNumber, fp);
+	// elements.add(new Element(method, lineNumber));
 	// if (iei > 0) {
 	// bci = OptEncodedCallSiteTree.getByteCodeOffset(iei, inlineEncoding);
 	// }
@@ -5383,6 +5403,8 @@ public final class RVMThread extends ThreadContext implements Constants {
 	// }
 	// if (!frameShown) {
 	// showMethod(method, lineNumber, fp);
+	// elements.add(new Element(method, lineNumber));
+	//
 	// }
 	// }
 	// }
@@ -5403,6 +5425,7 @@ public final class RVMThread extends ThreadContext implements Constants {
 	// --t.inDumpStack;
 	//
 	// Monitor.unlock(b, dumpLock);
+	// return (Element[]) elements.toArray();
 	// }
 
 	/**

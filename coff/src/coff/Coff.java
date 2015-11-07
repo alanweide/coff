@@ -2,7 +2,12 @@ package coff;
 
 import static org.jikesrvm.runtime.SysCall.sysCall;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.jikesrvm.VM;
+import org.jikesrvm.runtime.StackTrace.Element;
 import org.jikesrvm.scheduler.RVMThread;
 
 public class Coff {
@@ -79,6 +84,7 @@ public class Coff {
 		// }
 		RVMThread.acctLock.lockNoHandshake();
 		VM.sysWriteln("Dumping all live threads");
+		List<Element[]> allStacks = new ArrayList<Element[]>();
 		for (int i = 0; i < RVMThread.numThreads; ++i) {
 			RVMThread thr = RVMThread.threads[i];
 			if (thr != null && thr.isAlive() && !thr.isBootThread() && !thr.isDaemonThread() && !thr.isSystemThread()) {
@@ -86,13 +92,20 @@ public class Coff {
 				thr.dump();
 				VM.sysWriteln();
 				if (thr.contextRegisters != null && !thr.ignoreHandshakesAndGC()) {
-					VM.sysWriteln("Dumping stack of thread...");
+					VM.sysWriteln("Getting stack of thread...");
 					RVMThread.dumpStack(thr.contextRegisters.getInnermostFramePointer());
+					// Element[] stack =
+					// RVMThread.getStack(thr.contextRegisters.getInnermostFramePointer());
+					// allStacks.add(stack);
 				}
 				thr.endPairHandshake();
 			}
 		}
 		RVMThread.acctLock.unlock();
+
+		for (Element[] stack : allStacks) {
+			VM.sysWriteln(Arrays.toString(stack));
+		}
 
 		sysCall.sysNanoSleep(1000L * 1000L * PERFORMANCE_EXPERIMENT_DURATION);
 	}

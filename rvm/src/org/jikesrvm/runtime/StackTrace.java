@@ -172,7 +172,7 @@ public class StackTrace {
 		private final boolean isTrap;
 
 		/** Constructor for non-opt compiled methods */
-		Element(CompiledMethod cm, int off) {
+		public Element(CompiledMethod cm, int off) {
 			isInvisible = (cm == null);
 			if (!isInvisible) {
 				isTrap = cm.getCompilerType() == CompiledMethod.TRAP;
@@ -191,7 +191,7 @@ public class StackTrace {
 		}
 
 		/** Constructor for opt compiled methods */
-		Element(RVMMethod method, int ln) {
+		public Element(RVMMethod method, int ln) {
 			this.method = method;
 			lineNumber = ln;
 			isTrap = false;
