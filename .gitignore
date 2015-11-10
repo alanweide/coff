@@ -1,7 +1,7 @@
 jikesrvm.iml
 .ant.properties
-#.project
-#.settings
+.project
+.settings
 #.classpath
 .pmd
 .checkstyle
