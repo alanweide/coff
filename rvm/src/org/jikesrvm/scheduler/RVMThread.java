@@ -58,9 +58,11 @@ import org.jikesrvm.runtime.Entrypoints;
 import org.jikesrvm.runtime.Magic;
 import org.jikesrvm.runtime.Memory;
 import org.jikesrvm.runtime.RuntimeEntrypoints;
+import org.jikesrvm.runtime.StackTrace.Element;
 import org.jikesrvm.runtime.Time;
 import org.jikesrvm.tuningfork.Feedlet;
 import org.jikesrvm.tuningfork.TraceEngine;
+import org.jikesrvm.util.LinkedListRVM;
 import org.vmmagic.pragma.BaselineNoRegisters;
 import org.vmmagic.pragma.BaselineSaveLSRegisters;
 import org.vmmagic.pragma.Entrypoint;
@@ -5291,142 +5293,142 @@ public final class RVMThread extends ThreadContext implements Constants {
 	}
 
 	/**
-	 * Dump state of a (stopped) thread's stack.
+	 * Get a (stopped) thread's stack. Interruptible so we can create an object
+	 * in this method. This doesn't matter because the thread is stopped when
+	 * this method is called.
 	 *
 	 * @param fp
 	 *            address of starting frame. first frame output is the calling
 	 *            frame of passed frame
 	 */
-	// public static Element[] getStack(Address fp) {
-	// if (VM.VerifyAssertions) {
-	// VM._assert(VM.runningVM);
-	// }
-	// Address ip = Magic.getReturnAddress(fp);
-	// fp = Magic.getCallerFramePointer(fp);
-	// return getStack(ip, fp);
-	// }
+	@Interruptible
+	public static Element[] getStack(Address fp) {
+		if (VM.VerifyAssertions) {
+			VM._assert(VM.runningVM);
+		}
+		Address ip = Magic.getReturnAddress(fp);
+		fp = Magic.getCallerFramePointer(fp);
+		return getStack(ip, fp);
+	}
 
 	/**
-	 * Get a (stopped) thread's stack.
+	 * Get a (stopped) thread's stack. Interruptible so we can create an object
+	 * in this method. This doesn't matter because the thread is stopped when
+	 * this method is called.
 	 *
 	 * @param ip
 	 *            instruction pointer for first frame to dump
 	 * @param fp
 	 *            frame pointer for first frame to dump
 	 */
-	// public static Element[] getStack(Address ip, Address fp) {
-	// boolean b = Monitor.lockNoHandshake(dumpLock);
-	// RVMThread t = getCurrentThread();
-	// List<Element> elements = new ArrayList<Element>();
-	// ++t.inDumpStack;
-	// if (t.inDumpStack > 1 && t.inDumpStack <=
-	// VM.maxSystemTroubleRecursionDepth
-	// + VM.maxSystemTroubleRecursionDepthBeforeWeStopVMSysWrite) {
-	// VM.sysWrite("RVMThread.dumpStack(): in a recursive call, ");
-	// VM.sysWrite(t.inDumpStack);
-	// VM.sysWriteln(" deep.");
-	// }
-	// if (t.inDumpStack > VM.maxSystemTroubleRecursionDepth) {
-	// VM.dieAbruptlyRecursiveSystemTrouble();
-	// if (VM.VerifyAssertions)
-	// VM._assert(VM.NOT_REACHED);
-	// }
-	//
-	// if (!isAddressValidFramePointer(fp)) {
-	// VM.sysWrite("Bogus looking frame pointer: ", fp);
-	// VM.sysWriteln(" not dumping stack");
-	// } else {
-	// try {
-	// VM.sysWriteln("-- Stack --");
-	// while
-	// (Magic.getCallerFramePointer(fp).NE(StackframeLayoutConstants.STACKFRAME_SENTINEL_FP))
-	// {
-	//
-	// // if code is outside of RVM heap, assume it to be native
-	// // code,
-	// // skip to next frame
-	// if (!MemoryManager.addressInVM(ip)) {
-	// showMethod("native frame", fp);
-	// ip = Magic.getReturnAddress(fp);
-	// fp = Magic.getCallerFramePointer(fp);
-	// } else {
-	//
-	// int compiledMethodId = Magic.getCompiledMethodID(fp);
-	// VM.sysWrite("(");
-	// VM.sysWrite(fp);
-	// VM.sysWrite(" ");
-	// VM.sysWrite(compiledMethodId);
-	// VM.sysWrite(")");
-	// if (compiledMethodId == StackframeLayoutConstants.INVISIBLE_METHOD_ID) {
-	// showMethod("invisible method", fp);
-	// // Don't create an element for this method
-	// } else {
-	// // normal java frame(s)
-	// CompiledMethod compiledMethod =
-	// CompiledMethods.getCompiledMethod(compiledMethodId);
-	// if (compiledMethod == null) {
-	// showMethod(compiledMethodId, fp);
-	// // Don't create an element for this method
-	// } else if (compiledMethod.getCompilerType() == CompiledMethod.TRAP) {
-	// showMethod("hardware trap", fp);
-	// // Don't create an element for this method
-	// } else {
-	// RVMMethod method = compiledMethod.getMethod();
-	// Offset instructionOffset = compiledMethod.getInstructionOffset(ip);
-	// int lineNumber =
-	// compiledMethod.findLineNumberForInstruction(instructionOffset);
-	// boolean frameShown = false;
-	// if (VM.BuildForOptCompiler && compiledMethod.getCompilerType() ==
-	// CompiledMethod.OPT) {
-	// OptCompiledMethod optInfo = (OptCompiledMethod) compiledMethod;
-	// // Opt stack frames may contain multiple
-	// // inlined methods.
-	// OptMachineCodeMap map = optInfo.getMCMap();
-	// int iei = map.getInlineEncodingForMCOffset(instructionOffset);
-	// if (iei >= 0) {
-	// int[] inlineEncoding = map.inlineEncoding;
-	// int bci = map.getBytecodeIndexForMCOffset(instructionOffset);
-	// for (; iei >= 0; iei = OptEncodedCallSiteTree.getParent(iei,
-	// inlineEncoding)) {
-	// int mid = OptEncodedCallSiteTree.getMethodID(iei, inlineEncoding);
-	// method = MemberReference.getMemberRef(mid).asMethodReference()
-	// .getResolvedMember();
-	// lineNumber = ((NormalMethod) method).getLineNumberForBCIndex(bci);
-	// showMethod(method, lineNumber, fp);
-	// elements.add(new Element(method, lineNumber));
-	// if (iei > 0) {
-	// bci = OptEncodedCallSiteTree.getByteCodeOffset(iei, inlineEncoding);
-	// }
-	// }
-	// frameShown = true;
-	// }
-	// }
-	// if (!frameShown) {
-	// showMethod(method, lineNumber, fp);
-	// elements.add(new Element(method, lineNumber));
-	//
-	// }
-	// }
-	// }
-	// ip = Magic.getReturnAddress(fp);
-	// fp = Magic.getCallerFramePointer(fp);
-	// }
-	// if (!isAddressValidFramePointer(fp)) {
-	// VM.sysWrite("Bogus looking frame pointer: ", fp);
-	// VM.sysWriteln(" end of stack dump");
-	// break;
-	// }
-	// } // end while
-	// } catch (Throwable th) {
-	// VM.sysWriteln("Something bad killed the stack dump. The last frame
-	// pointer was: ", fp);
-	// }
-	// }
-	// --t.inDumpStack;
-	//
-	// Monitor.unlock(b, dumpLock);
-	// return (Element[]) elements.toArray();
-	// }
+	@Interruptible
+	public static Element[] getStack(Address ip, Address fp) {
+		boolean b = Monitor.lockNoHandshake(dumpLock);
+		RVMThread t = getCurrentThread();
+		LinkedListRVM<Element> elements = new LinkedListRVM<Element>();
+		++t.inDumpStack;
+		if (t.inDumpStack > 1 && t.inDumpStack <= VM.maxSystemTroubleRecursionDepth
+				+ VM.maxSystemTroubleRecursionDepthBeforeWeStopVMSysWrite) {
+			VM.sysWrite("RVMThread.dumpStack(): in a recursive call, ");
+			VM.sysWrite(t.inDumpStack);
+			VM.sysWriteln(" deep.");
+		}
+		if (t.inDumpStack > VM.maxSystemTroubleRecursionDepth) {
+			VM.dieAbruptlyRecursiveSystemTrouble();
+			if (VM.VerifyAssertions)
+				VM._assert(VM.NOT_REACHED);
+		}
+
+		if (!isAddressValidFramePointer(fp)) {
+			VM.sysWrite("Bogus looking frame pointer: ", fp);
+			VM.sysWriteln(" not dumping stack");
+		} else {
+			try {
+				VM.sysWriteln("-- Stack --");
+				while (Magic.getCallerFramePointer(fp).NE(StackframeLayoutConstants.STACKFRAME_SENTINEL_FP)) {
+
+					// if code is outside of RVM heap, assume it to be native
+					// code,
+					// skip to next frame
+					if (!MemoryManager.addressInVM(ip)) {
+						showMethod("native frame", fp);
+						ip = Magic.getReturnAddress(fp);
+						fp = Magic.getCallerFramePointer(fp);
+					} else {
+
+						int compiledMethodId = Magic.getCompiledMethodID(fp);
+						VM.sysWrite("(");
+						VM.sysWrite(fp);
+						VM.sysWrite(" ");
+						VM.sysWrite(compiledMethodId);
+						VM.sysWrite(")");
+						if (compiledMethodId == StackframeLayoutConstants.INVISIBLE_METHOD_ID) {
+							showMethod("invisible method", fp);
+							// Don't create an element for this method
+						} else {
+							// normal java frame(s)
+							CompiledMethod compiledMethod = CompiledMethods.getCompiledMethod(compiledMethodId);
+							if (compiledMethod == null) {
+								showMethod(compiledMethodId, fp);
+								// Don't create an element for this method
+							} else if (compiledMethod.getCompilerType() == CompiledMethod.TRAP) {
+								showMethod("hardware trap", fp);
+								// Don't create an element for this method
+							} else {
+								RVMMethod method = compiledMethod.getMethod();
+								Offset instructionOffset = compiledMethod.getInstructionOffset(ip);
+								int lineNumber = compiledMethod.findLineNumberForInstruction(instructionOffset);
+								boolean frameShown = false;
+								if (VM.BuildForOptCompiler && compiledMethod.getCompilerType() == CompiledMethod.OPT) {
+									OptCompiledMethod optInfo = (OptCompiledMethod) compiledMethod;
+									// Opt stack frames may contain multiple
+									// inlined methods.
+									OptMachineCodeMap map = optInfo.getMCMap();
+									int iei = map.getInlineEncodingForMCOffset(instructionOffset);
+									if (iei >= 0) {
+										int[] inlineEncoding = map.inlineEncoding;
+										int bci = map.getBytecodeIndexForMCOffset(instructionOffset);
+										for (; iei >= 0; iei = OptEncodedCallSiteTree.getParent(iei, inlineEncoding)) {
+											int mid = OptEncodedCallSiteTree.getMethodID(iei, inlineEncoding);
+											method = MemberReference.getMemberRef(mid).asMethodReference()
+													.getResolvedMember();
+											lineNumber = ((NormalMethod) method).getLineNumberForBCIndex(bci);
+											showMethod(method, lineNumber, fp);
+											elements.add(new Element(method, lineNumber));
+											if (iei > 0) {
+												bci = OptEncodedCallSiteTree.getByteCodeOffset(iei, inlineEncoding);
+											}
+										}
+										frameShown = true;
+									}
+								}
+								if (!frameShown) {
+									showMethod(method, lineNumber, fp);
+
+									elements.add(new Element(method, lineNumber));
+
+								}
+							}
+						}
+						ip = Magic.getReturnAddress(fp);
+						fp = Magic.getCallerFramePointer(fp);
+					}
+					if (!isAddressValidFramePointer(fp)) {
+						VM.sysWrite("Bogus looking frame pointer: ", fp);
+						VM.sysWriteln(" end of stack dump");
+						break;
+					}
+				} // end while
+			} catch (Throwable th) {
+				VM.sysWriteln("Something bad killed the stack dump. The last frame pointer was: ", fp);
+			}
+		}
+		--t.inDumpStack;
+
+		Monitor.unlock(b, dumpLock);
+		// return (Element[]) elements.toArray();
+		return null;
+	}
 
 	/**
 	 * Return true if the supplied address could be a valid frame pointer. To

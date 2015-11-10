@@ -62,26 +62,7 @@ public class Coff {
 
 	private static void beginExperiment() throws InterruptedException {
 		VM.sysWriteln("Beginning experiment on line " + lineToProfile);
-		// RVMThread.dumpVirtualMachine();
 		VM.sysWriteln("Attempting to dump the stack of all other live threads");
-		// VM.sysWriteln("This is somewhat risky since if the thread is running
-		// we're going to be quite confused");
-		// for (int i = 0; i < RVMThread.numThreads; i++) {
-		// RVMThread thr = RVMThread.threads[i];
-		// if (thr != null && thr != RVMThread.getCurrentThread() &&
-		// thr.isAlive() && !thr.isDaemonThread()
-		// && !thr.isBootThread() && !thr.isSystemThread()) {
-		// thr.suspend();
-		// thr.dump();
-		// // PNT: FIXME: this won't work so well since the context
-		// // registers
-		// // don't tend to have sane values
-		// if (thr.contextRegisters != null && !thr.ignoreHandshakesAndGC()) {
-		// RVMThread.dumpStack(thr.contextRegisters.getInnermostFramePointer());
-		// }
-		// thr.resume();
-		// }
-		// }
 		RVMThread.acctLock.lockNoHandshake();
 		VM.sysWriteln("Dumping all live threads");
 		List<Element[]> allStacks = new ArrayList<Element[]>();
@@ -93,10 +74,9 @@ public class Coff {
 				VM.sysWriteln();
 				if (thr.contextRegisters != null && !thr.ignoreHandshakesAndGC()) {
 					VM.sysWriteln("Getting stack of thread...");
-					RVMThread.dumpStack(thr.contextRegisters.getInnermostFramePointer());
-					// Element[] stack =
-					// RVMThread.getStack(thr.contextRegisters.getInnermostFramePointer());
-					// allStacks.add(stack);
+					// RVMThread.dumpStack(thr.contextRegisters.getInnermostFramePointer());
+					Element[] stack = RVMThread.getStack(thr.contextRegisters.getInnermostFramePointer());
+					allStacks.add(stack);
 				}
 				thr.endPairHandshake();
 			}
