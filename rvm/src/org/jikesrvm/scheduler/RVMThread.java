@@ -5344,24 +5344,24 @@ public final class RVMThread extends ThreadContext implements Constants {
 			VM.sysWriteln(" not dumping stack");
 		} else {
 			try {
-				VM.sysWriteln("-- Stack --");
+				// VM.sysWriteln("-- Stack --");
 				while (Magic.getCallerFramePointer(fp).NE(StackframeLayoutConstants.STACKFRAME_SENTINEL_FP)) {
 
 					// if code is outside of RVM heap, assume it to be native
 					// code,
 					// skip to next frame
 					if (!MemoryManager.addressInVM(ip)) {
-						showMethod("native frame", fp);
+						// showMethod("native frame", fp);
 						ip = Magic.getReturnAddress(fp);
 						fp = Magic.getCallerFramePointer(fp);
 					} else {
 
 						int compiledMethodId = Magic.getCompiledMethodID(fp);
-						VM.sysWrite("(");
-						VM.sysWrite(fp);
-						VM.sysWrite(" ");
-						VM.sysWrite(compiledMethodId);
-						VM.sysWrite(")");
+						// VM.sysWrite("(");
+						// VM.sysWrite(fp);
+						// VM.sysWrite(" ");
+						// VM.sysWrite(compiledMethodId);
+						// VM.sysWrite(")");
 						if (compiledMethodId == StackframeLayoutConstants.INVISIBLE_METHOD_ID) {
 							// showMethod("invisible method", fp);
 							// Don't create an element for this method
