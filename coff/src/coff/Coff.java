@@ -3,7 +3,6 @@ package coff;
 import static org.jikesrvm.runtime.SysCall.sysCall;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.jikesrvm.VM;
@@ -29,7 +28,6 @@ public class Coff {
 	 */
 	private static final int COOLDOWN_TIME = 10;
 
-	private static RVMThread[] currentThreads;
 	private static int[] curThreadCounters;
 
 	private static int lineToProfile;
@@ -49,7 +47,7 @@ public class Coff {
 					optimizationLevel = 0.5;
 					try {
 						// sysCall.sysNanoSleep(1000L * 1000L * COOLDOWN_TIME);
-						beginExperiment();
+						performExperiment();
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
@@ -60,22 +58,23 @@ public class Coff {
 		return coffThread;
 	}
 
-	private static void beginExperiment() throws InterruptedException {
+	private static void performExperiment() throws InterruptedException {
 		VM.sysWriteln("Beginning experiment on line " + lineToProfile);
 		VM.sysWriteln("Attempting to dump the stack of all other live threads");
 		RVMThread.acctLock.lockNoHandshake();
 		VM.sysWriteln("Dumping all live threads");
-		List<Element[]> allStacks = new ArrayList<Element[]>();
-		for (int i = 0; i < RVMThread.numThreads; ++i) {
+		List<List<Element>> allStacks = new ArrayList<List<Element>>();
+		for (int i = 0; i < RVMThread.numThreads; i++) {
 			RVMThread thr = RVMThread.threads[i];
 			if (thr != null && thr.isAlive() && !thr.isBootThread() && !thr.isDaemonThread() && !thr.isSystemThread()) {
 				thr.beginPairHandshake();
 				thr.dump();
 				VM.sysWriteln();
 				if (thr.contextRegisters != null && !thr.ignoreHandshakesAndGC()) {
-					VM.sysWriteln("Getting stack of thread...");
+					// VM.sysWriteln("Getting stack of thread...");
 					// RVMThread.dumpStack(thr.contextRegisters.getInnermostFramePointer());
-					Element[] stack = RVMThread.getStack(thr.contextRegisters.getInnermostFramePointer());
+					List<Element> stack = RVMThread.getStack(thr.contextRegisters.getInnermostFramePointer());
+
 					allStacks.add(stack);
 				}
 				thr.endPairHandshake();
@@ -83,8 +82,13 @@ public class Coff {
 		}
 		RVMThread.acctLock.unlock();
 
-		for (Element[] stack : allStacks) {
-			VM.sysWriteln(Arrays.toString(stack));
+		for (List<Element> stack : allStacks) {
+			VM.sysWriteln("Printing stack...");
+			for (Element stackElement : stack) {
+				// VM.sysWriteln(stackElement.toString());
+				VM.sysWriteln(stackElement.getFileName() + ": " + stackElement.getClassName() + "."
+						+ stackElement.getMethodName() + "() at line " + stackElement.getLineNumber());
+			}
 		}
 
 		sysCall.sysNanoSleep(1000L * 1000L * PERFORMANCE_EXPERIMENT_DURATION);

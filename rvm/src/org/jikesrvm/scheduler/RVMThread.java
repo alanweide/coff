@@ -5302,7 +5302,7 @@ public final class RVMThread extends ThreadContext implements Constants {
 	 *            frame of passed frame
 	 */
 	@Interruptible
-	public static Element[] getStack(Address fp) {
+	public static LinkedListRVM<Element> getStack(Address fp) {
 		if (VM.VerifyAssertions) {
 			VM._assert(VM.runningVM);
 		}
@@ -5322,7 +5322,7 @@ public final class RVMThread extends ThreadContext implements Constants {
 	 *            frame pointer for first frame to dump
 	 */
 	@Interruptible
-	public static Element[] getStack(Address ip, Address fp) {
+	public static LinkedListRVM<Element> getStack(Address ip, Address fp) {
 		boolean b = Monitor.lockNoHandshake(dumpLock);
 		RVMThread t = getCurrentThread();
 		LinkedListRVM<Element> elements = new LinkedListRVM<Element>();
@@ -5363,16 +5363,16 @@ public final class RVMThread extends ThreadContext implements Constants {
 						VM.sysWrite(compiledMethodId);
 						VM.sysWrite(")");
 						if (compiledMethodId == StackframeLayoutConstants.INVISIBLE_METHOD_ID) {
-							showMethod("invisible method", fp);
+							// showMethod("invisible method", fp);
 							// Don't create an element for this method
 						} else {
 							// normal java frame(s)
 							CompiledMethod compiledMethod = CompiledMethods.getCompiledMethod(compiledMethodId);
 							if (compiledMethod == null) {
-								showMethod(compiledMethodId, fp);
+								// showMethod(compiledMethodId, fp);
 								// Don't create an element for this method
 							} else if (compiledMethod.getCompilerType() == CompiledMethod.TRAP) {
-								showMethod("hardware trap", fp);
+								// showMethod("hardware trap", fp);
 								// Don't create an element for this method
 							} else {
 								RVMMethod method = compiledMethod.getMethod();
@@ -5393,7 +5393,8 @@ public final class RVMThread extends ThreadContext implements Constants {
 											method = MemberReference.getMemberRef(mid).asMethodReference()
 													.getResolvedMember();
 											lineNumber = ((NormalMethod) method).getLineNumberForBCIndex(bci);
-											showMethod(method, lineNumber, fp);
+											// showMethod(method, lineNumber,
+											// fp);
 											elements.add(new Element(method, lineNumber));
 											if (iei > 0) {
 												bci = OptEncodedCallSiteTree.getByteCodeOffset(iei, inlineEncoding);
@@ -5403,7 +5404,7 @@ public final class RVMThread extends ThreadContext implements Constants {
 									}
 								}
 								if (!frameShown) {
-									showMethod(method, lineNumber, fp);
+									// showMethod(method, lineNumber, fp);
 
 									elements.add(new Element(method, lineNumber));
 
@@ -5427,7 +5428,8 @@ public final class RVMThread extends ThreadContext implements Constants {
 
 		Monitor.unlock(b, dumpLock);
 		// return (Element[]) elements.toArray();
-		return null;
+		return elements;
+		// return null;
 	}
 
 	/**
