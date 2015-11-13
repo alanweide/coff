@@ -2545,6 +2545,7 @@ public class VM extends Properties implements Constants, ExitStatus {
 
 		if (VM.VerifyAssertions)
 			VM._assert(VM.runningVM);
+
 		sysCall.sysExit(value);
 		if (VM.VerifyAssertions)
 			VM._assert(VM.NOT_REACHED);
