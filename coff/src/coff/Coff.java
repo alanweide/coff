@@ -92,11 +92,7 @@ public class Coff {
 				if (thr != null && thr.isAlive() && !thr.isBootThread() && !thr.isDaemonThread()
 						&& !thr.isSystemThread()) {
 					thr.beginPairHandshake();
-					// thr.dump();
-					// VM.sysWriteln();
 					if (thr.contextRegisters != null && !thr.ignoreHandshakesAndGC()) {
-						// VM.sysWriteln("Getting stack of thread...");
-						// RVMThread.dumpStack(thr.contextRegisters.getInnermostFramePointer());
 						List<Element> stack = RVMThread.getStack(thr.contextRegisters.getInnermostFramePointer());
 						currentThreads.add(thr);
 						usefulStacks.add(stack);
@@ -106,7 +102,10 @@ public class Coff {
 			}
 			RVMThread.acctLock.unlock();
 
-			// Get the number of times each thread
+			/*
+			 * Get the number of times each thread's stack falls in the function
+			 * of interest
+			 */
 			curThreadCounters = new int[usefulStacks.size()];
 			for (int j = 0; j < usefulStacks.size(); j++) {
 				List<Element> stack = usefulStacks.get(j);
@@ -147,7 +146,9 @@ public class Coff {
 	}
 
 	private static void delayThread(final RVMThread thr, final long delay) {
-		// need to delay thread on a separate thread from the main coff thread
+		/*
+		 * Need to delay thread on a separate thread from the main coff thread
+		 */
 		Thread delayThread = new Thread(new Runnable() {
 
 			@Override
@@ -163,15 +164,14 @@ public class Coff {
 	private static void printStack(List<Element> stack) {
 		VM.sysWriteln("\nPrinting stack...");
 		for (Element stackElement : stack) {
-			// VM.sysWriteln(stackElement.toString());
 			VM.sysWriteln(stackElement.getFileName() + ": " + stackElement.getClassName() + "."
 					+ stackElement.getMethodName() + "() at line " + stackElement.getLineNumber());
 		}
 	}
 
 	public static void report() {
-		// TODO: Calculate total runtime, and report more useful things,
-		// including printing the output to a profile file
+		// TODO: Report more useful things, including printing the output to a
+		// profile file
 		long durationInMs = new Date().getTime() - startTime;
 		VM.sysWriteln("\n-------- Begin Coff Results --------");
 		VM.sysWriteln("Total Runtime: " + durationInMs / 1000.0 + " s");
