@@ -178,7 +178,7 @@ public class Coff {
 		VM.sysWriteln("Total Delay Added: " + totalDelay / 1000000L + " ms");
 		VM.sysWriteln("Line being optimized (opt amount: " + optimizationLevel + "): " + fileToProfile + " at "
 				+ lineToProfile + " was sampled " + totalSamples + " times");
-		VM.sysWriteln("-------- End Coff Results --------");
+		VM.sysWriteln("-------- End Coff Results --------\n");
 
 	}
 }

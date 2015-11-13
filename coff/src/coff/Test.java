@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Test {
 	private static void a() {
-		for (int i = 0; i < 2000000000; i++) {
+		for (int i = 0; i < 200000000; i++) {
 
 		}
 	}
@@ -34,8 +34,8 @@ public class Test {
 		a.start();
 		b.start();
 		System.out.println("Started both threads");
-		a.join();
 		b.join();
+		a.join();
 		double secondsElapsed = (new Date().getTime() - start.getTime()) / 1000.0;
 		System.out.println("Ran test in " + secondsElapsed + " seconds");
 	}
