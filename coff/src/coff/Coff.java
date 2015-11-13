@@ -64,15 +64,16 @@ public class Coff {
 			public void run() {
 				startTime = new Date().getTime();
 				while (VM.mainThread.isAlive()) {
+					// TODO: select a random line and opt level
 					lineToProfile = 7;
 					fileToProfile = "Test.java";
 					optimizationLevel = 0.1;
 					try {
-						// sysCall.sysNanoSleep(1000L * 1000L * COOLDOWN_TIME);
-						performExperiment();
+						performAnExperiment();
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
+					sysCall.sysNanoSleep(COOLDOWN_TIME * MILLIS_TO_NANOS);
 				}
 			}
 		});
@@ -80,8 +81,7 @@ public class Coff {
 		return coffThread;
 	}
 
-	private static void performExperiment() throws InterruptedException {
-		// TODO: select a random function and opt level
+	private static void performAnExperiment() throws InterruptedException {
 		int samplesPerExperiment = PERFORMANCE_EXPERIMENT_DURATION / SAMPLE_GRANULARITY;
 		for (int i = 1; i <= samplesPerExperiment; i++) {
 			RVMThread.acctLock.lockNoHandshake();
@@ -119,7 +119,7 @@ public class Coff {
 				samplesPerExperiment *= 2;
 			}
 			curGlobalCounter = 0;
-			sysCall.sysNanoSleep(1000L * 1000L * SAMPLE_GRANULARITY);
+			sysCall.sysNanoSleep(SAMPLE_GRANULARITY * MILLIS_TO_NANOS);
 		}
 	}
 
