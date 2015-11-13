@@ -220,7 +220,7 @@ public final class MainThread extends Thread {
 		// TODO: maybe do coff reporting here, when the main thread finishes
 		// running?
 		if (VM.coffEnabled) {
-			Coff.report();
+			Coff.cleanup();
 		}
 	}
 }

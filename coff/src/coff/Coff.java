@@ -17,7 +17,7 @@ public class Coff {
 	/**
 	 * Base duration of performance experiment in ms
 	 */
-	private static final int PERFORMANCE_EXPERIMENT_DURATION = 100;
+	private static int PERFORMANCE_EXPERIMENT_DURATION = 100;
 
 	private static final int MAX_PERFORMANCE_EXPERIMENT_DURATION = 1000;
 
@@ -39,9 +39,9 @@ public class Coff {
 	 */
 	private static final int MIN_SAMPLES_PER_EXPERIMENT = 2;
 
-	private static final long MILLIS_TO_NANOS = 1000000L;
+	private static final long NANOSEC_PER_MILLISEC = 1000000L;
 
-	private static List<RVMThread> currentThreads;
+	private static List<RVMThread> applicationThreads;
 	private static int[] curThreadCounters;
 
 	private static long totalDelay;
@@ -64,16 +64,12 @@ public class Coff {
 			public void run() {
 				startTime = new Date().getTime();
 				while (VM.mainThread.isAlive()) {
-					// TODO: select a random line and opt level
-					lineToProfile = 7;
-					fileToProfile = "Test.java";
-					optimizationLevel = 0.1;
 					try {
 						performAnExperiment();
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
-					sysCall.sysNanoSleep(COOLDOWN_TIME * MILLIS_TO_NANOS);
+					sysCall.sysNanoSleep(COOLDOWN_TIME * NANOSEC_PER_MILLISEC);
 				}
 			}
 		});
@@ -82,11 +78,22 @@ public class Coff {
 	}
 
 	private static void performAnExperiment() throws InterruptedException {
+
+		// TODO: select a random line
+		String fileToProfile = "Test.java";
+		int lineToProfile = randomLine(fileToProfile);
+		int optimizationLevel = randOptLevel();
+
 		int samplesPerExperiment = PERFORMANCE_EXPERIMENT_DURATION / SAMPLE_GRANULARITY;
 		for (int i = 1; i <= samplesPerExperiment; i++) {
+
+			/*
+			 * TODO: do thread accounting on thread start and end from RVM, not
+			 * every sample
+			 */
 			RVMThread.acctLock.lockNoHandshake();
 			List<List<Element>> usefulStacks = new ArrayList<List<Element>>();
-			currentThreads = new ArrayList<RVMThread>();
+			applicationThreads = new ArrayList<RVMThread>();
 			for (int j = 0; j < RVMThread.numThreads; j++) {
 				RVMThread thr = RVMThread.threads[j];
 				if (thr != null && thr.isAlive() && !thr.isBootThread() && !thr.isDaemonThread()
@@ -94,7 +101,7 @@ public class Coff {
 					thr.beginPairHandshake();
 					if (thr.contextRegisters != null && !thr.ignoreHandshakesAndGC()) {
 						List<Element> stack = RVMThread.getStack(thr.contextRegisters.getInnermostFramePointer());
-						currentThreads.add(thr);
+						applicationThreads.add(thr);
 						usefulStacks.add(stack);
 					}
 					thr.endPairHandshake();
@@ -109,8 +116,7 @@ public class Coff {
 			curThreadCounters = new int[usefulStacks.size()];
 			for (int j = 0; j < usefulStacks.size(); j++) {
 				List<Element> stack = usefulStacks.get(j);
-				curThreadCounters[j] += getSamplesInThread(stack);
-				// printStack(stack);
+				curThreadCounters[j] = curGlobalCounter + getSamplesInThread(stack);
 			}
 			addDelays();
 
@@ -118,9 +124,48 @@ public class Coff {
 					&& (samplesPerExperiment * SAMPLE_GRANULARITY) < MAX_PERFORMANCE_EXPERIMENT_DURATION) {
 				samplesPerExperiment *= 2;
 			}
-			curGlobalCounter = 0;
-			sysCall.sysNanoSleep(SAMPLE_GRANULARITY * MILLIS_TO_NANOS);
+
+			/*
+			 * Wait to take the next sample
+			 */
+			sysCall.sysNanoSleep(SAMPLE_GRANULARITY * NANOSEC_PER_MILLISEC);
 		}
+		long experimentDelays = (long) (optimizationLevel
+				* (curGlobalCounter * SAMPLE_GRANULARITY * NANOSEC_PER_MILLISEC));
+
+		reportExperimentResults(experimentDelays);
+		/*
+		 * Increase the performance experiment duration for the rest of the
+		 * execution if it has changed
+		 */
+		PERFORMANCE_EXPERIMENT_DURATION = samplesPerExperiment * SAMPLE_GRANULARITY;
+	}
+
+	private static int randomLine(String fileToProfile) {
+		return (Math.random() < 0.5 ? 7 : 13);
+		/*
+		 * TODO: make this a random line from all source files
+		 */
+	}
+
+	private static int randOptLevel() {
+		// Get a random number from 0-1 (with appropriate distribution)
+		double ans = 2.0 * Math.max(Math.random() - 0.5, 0.0);
+		int intAns = 0;
+		if (ans != 0.0) {
+			// Round it to nearest 5%
+			intAns = 5 * (int) (ans * (100 / 5));
+		}
+
+		return intAns;
+	}
+
+	private static void reportExperimentResults(long experimentDelays) {
+		VM.sysWriteln("Effective duration = "
+				+ (PERFORMANCE_EXPERIMENT_DURATION - (experimentDelays / NANOSEC_PER_MILLISEC)));
+		VM.sysWriteln("Line sampled = " + fileToProfile + " line " + lineToProfile);
+		VM.sysWriteln("Virtual optimization = " + optimizationLevel);
+		VM.sysWriteln();
 	}
 
 	private static int getSamplesInThread(List<Element> stack) {
@@ -136,10 +181,10 @@ public class Coff {
 	}
 
 	private static void addDelays() {
-		for (int i = 0; i < currentThreads.size(); i++) {
+		for (int i = 0; i < applicationThreads.size(); i++) {
 			long delay = (long) (optimizationLevel
-					* ((curGlobalCounter - curThreadCounters[i]) * SAMPLE_GRANULARITY * MILLIS_TO_NANOS));
-			delayThread(currentThreads.get(i), delay);
+					* ((curGlobalCounter - curThreadCounters[i]) * SAMPLE_GRANULARITY * NANOSEC_PER_MILLISEC));
+			delayThread(applicationThreads.get(i), delay);
 			curThreadCounters[i] = curGlobalCounter;
 			totalDelay += delay;
 		}
@@ -169,16 +214,19 @@ public class Coff {
 		}
 	}
 
-	public static void report() {
+	public static void cleanup() {
 		// TODO: Report more useful things, including printing the output to a
 		// profile file
 		long durationInMs = new Date().getTime() - startTime;
-		VM.sysWriteln("\n-------- Begin Coff Results --------");
-		VM.sysWriteln("Total Runtime: " + durationInMs / 1000.0 + " s");
-		VM.sysWriteln("Total Delay Added: " + totalDelay / 1000000L + " ms");
-		VM.sysWriteln("Line being optimized (opt amount: " + optimizationLevel + "): " + fileToProfile + " at line "
-				+ lineToProfile + " was sampled " + totalSamples + " times");
-		VM.sysWriteln("-------- End Coff Results --------\n");
+		VM.sysWriteln("\nTotal Runtime: " + durationInMs / 1000.0 + " s");
 
+	}
+
+	public static void beginProfilingThread(RVMThread t) {
+		applicationThreads.add(t);
+	}
+
+	public static void stopProfilingThread(RVMThread t) {
+		applicationThreads.remove(t);
 	}
 }
