@@ -130,10 +130,10 @@ public class Coff {
 			 */
 			sysCall.sysNanoSleep(SAMPLE_GRANULARITY * NANOSEC_PER_MILLISEC);
 		}
-		long experimentDelays = (long) (optimizationLevel
+		long totalExperimentDelay = (long) (optimizationLevel
 				* (curGlobalCounter * SAMPLE_GRANULARITY * NANOSEC_PER_MILLISEC));
 
-		reportExperimentResults(experimentDelays);
+		reportExperimentResults(totalExperimentDelay);
 		/*
 		 * Increase the performance experiment duration for the rest of the
 		 * execution if it has changed
@@ -149,12 +149,12 @@ public class Coff {
 	}
 
 	private static int randOptLevel() {
-		// Get a random number from 0-1 (with appropriate distribution)
+		// Get a random number from 0-100 (with appropriate distribution)
 		double ans = 2.0 * Math.max(Math.random() - 0.5, 0.0);
-		int intAns = 0;
+		int intAns = (int) (ans * 100);
 		if (ans != 0.0) {
 			// Round it to nearest 5%
-			intAns = 5 * (int) (ans * (100 / 5));
+			intAns = 5 * (intAns / 5);
 		}
 
 		return intAns;
@@ -183,7 +183,7 @@ public class Coff {
 	private static void addDelays() {
 		for (int i = 0; i < applicationThreads.size(); i++) {
 			long delay = (long) (optimizationLevel
-					* ((curGlobalCounter - curThreadCounters[i]) * SAMPLE_GRANULARITY * NANOSEC_PER_MILLISEC));
+					* ((curGlobalCounter - curThreadCounters[i]) * SAMPLE_GRANULARITY * NANOSEC_PER_MILLISEC) / 100);
 			delayThread(applicationThreads.get(i), delay);
 			curThreadCounters[i] = curGlobalCounter;
 			totalDelay += delay;
