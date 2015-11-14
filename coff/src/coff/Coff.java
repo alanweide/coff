@@ -46,9 +46,9 @@ public class Coff {
 
 	private static long totalDelay;
 
-	private static int lineToProfile;
-	private static String fileToProfile;
-	private static double optimizationLevel;
+	//private static int lineToProfile;
+	//private static String fileToProfile;
+	//private static double optimizationLevel;
 	private static int curGlobalCounter;
 
 	private static long totalSamples;
@@ -80,9 +80,10 @@ public class Coff {
 	private static void performAnExperiment() throws InterruptedException {
 
 		// TODO: actually select a random line
-		fileToProfile = "Test.java";
-		lineToProfile = randomLine(fileToProfile);
-		optimizationLevel = randOptLevel();
+		String fileToProfile = "Test.java";
+		int lineToProfile = randomLine(fileToProfile);
+		double optimizationLevel = randOptLevel();
+		curGlobalCounter=0;
 
 		int samplesPerExperiment = PERFORMANCE_EXPERIMENT_DURATION / SAMPLE_GRANULARITY;
 		for (int i = 1; i <= samplesPerExperiment; i++) {
@@ -116,9 +117,9 @@ public class Coff {
 			curThreadCounters = new int[usefulStacks.size()];
 			for (int j = 0; j < usefulStacks.size(); j++) {
 				List<Element> stack = usefulStacks.get(j);
-				curThreadCounters[j] = curGlobalCounter + getSamplesInThread(stack);
+				curThreadCounters[j] = curGlobalCounter + getSamplesInThread(stack, lineToProfile, fileToProfile);
 			}
-			addDelays();
+			addDelays(optimizationLevel);
 
 			if (curGlobalCounter < MIN_SAMPLES_PER_EXPERIMENT && i == samplesPerExperiment
 					&& (samplesPerExperiment * SAMPLE_GRANULARITY) < MAX_PERFORMANCE_EXPERIMENT_DURATION) {
@@ -133,7 +134,7 @@ public class Coff {
 		long experimentDelays = (long) (optimizationLevel
 				* (curGlobalCounter * SAMPLE_GRANULARITY * NANOSEC_PER_MILLISEC));
 
-		reportExperimentResults(experimentDelays);
+		reportExperimentResults(experimentDelays, lineToProfile, fileToProfile, optimizationLevel);
 		/*
 		 * Increase the performance experiment duration for the rest of the
 		 * execution if it has changed
@@ -156,11 +157,10 @@ public class Coff {
 			// Round it to nearest 5%
 			intAns = 5 * (int) (ans * (100 / 5));
 		}
-
 		return intAns;
 	}
 
-	private static void reportExperimentResults(long experimentDelays) {
+	private static void reportExperimentResults(long experimentDelays, int lineToProfile, String fileToProfile, double optimizationLevel) {
 		VM.sysWriteln("Effective duration = "
 				+ (PERFORMANCE_EXPERIMENT_DURATION - (experimentDelays / NANOSEC_PER_MILLISEC)));
 		VM.sysWriteln("Line sampled = " + fileToProfile + " line " + lineToProfile);
@@ -168,7 +168,7 @@ public class Coff {
 		VM.sysWriteln();
 	}
 
-	private static int getSamplesInThread(List<Element> stack) {
+	private static int getSamplesInThread(List<Element> stack, int lineToProfile, String fileToProfile) {
 		int numSamplesInMethod = 0;
 		for (Element e : stack) {
 			if (e.getLineNumber() == lineToProfile && e.getFileName().equals(fileToProfile)) {
@@ -180,7 +180,7 @@ public class Coff {
 		return numSamplesInMethod;
 	}
 
-	private static void addDelays() {
+	private static void addDelays(double optimizationLevel) {
 		for (int i = 0; i < applicationThreads.size(); i++) {
 			long delay = (long) (optimizationLevel
 					* ((curGlobalCounter - curThreadCounters[i]) * SAMPLE_GRANULARITY * NANOSEC_PER_MILLISEC));
