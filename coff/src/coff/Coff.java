@@ -155,7 +155,7 @@ public class Coff {
 		int intAns = 0;
 		if (ans != 0.0) {
 			// Round it to nearest 5%
-			intAns = 5 * (int) (ans * (100 / 5));
+			intAns = 5 * (int) (ans * (1 / 5));
 		}
 		return intAns;
 	}
