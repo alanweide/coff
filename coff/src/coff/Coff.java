@@ -79,10 +79,10 @@ public class Coff {
 
 	private static void performAnExperiment() throws InterruptedException {
 
-		// TODO: select a random line
-		String fileToProfile = "Test.java";
-		int lineToProfile = randomLine(fileToProfile);
-		int optimizationLevel = randOptLevel();
+		// TODO: actually select a random line
+		fileToProfile = "Test.java";
+		lineToProfile = randomLine(fileToProfile);
+		optimizationLevel = randOptLevel();
 
 		int samplesPerExperiment = PERFORMANCE_EXPERIMENT_DURATION / SAMPLE_GRANULARITY;
 		for (int i = 1; i <= samplesPerExperiment; i++) {
