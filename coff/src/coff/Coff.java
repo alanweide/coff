@@ -24,7 +24,7 @@ public class Coff {
 	/**
 	 * Time in ms between samples
 	 */
-	private static final int SAMPLE_GRANULARITY = 10;
+	private static final int SAMPLE_PERIOD = 10;
 
 	/**
 	 * Time in ms after experiment is completed to "cool down"; should be >=
@@ -84,7 +84,7 @@ public class Coff {
 		lineToProfile = randomLine(fileToProfile);
 		optimizationLevel = randOptLevel();
 
-		int samplesPerExperiment = PERFORMANCE_EXPERIMENT_DURATION / SAMPLE_GRANULARITY;
+		int samplesPerExperiment = PERFORMANCE_EXPERIMENT_DURATION / SAMPLE_PERIOD;
 		for (int i = 1; i <= samplesPerExperiment; i++) {
 
 			/*
@@ -116,29 +116,29 @@ public class Coff {
 			curThreadCounters = new int[usefulStacks.size()];
 			for (int j = 0; j < usefulStacks.size(); j++) {
 				List<Element> stack = usefulStacks.get(j);
-				curThreadCounters[j] = curGlobalCounter + getSamplesInThread(stack);
+				curThreadCounters[j] = curGlobalCounter + getSamplesInMethod(stack);
 			}
 			addDelays();
 
-			if (curGlobalCounter < MIN_SAMPLES_PER_EXPERIMENT && i == samplesPerExperiment
-					&& (samplesPerExperiment * SAMPLE_GRANULARITY) < MAX_PERFORMANCE_EXPERIMENT_DURATION) {
+			if (i == samplesPerExperiment && curGlobalCounter < MIN_SAMPLES_PER_EXPERIMENT
+					&& (samplesPerExperiment * SAMPLE_PERIOD) < MAX_PERFORMANCE_EXPERIMENT_DURATION) {
 				samplesPerExperiment *= 2;
 			}
 
 			/*
 			 * Wait to take the next sample
 			 */
-			sysCall.sysNanoSleep(SAMPLE_GRANULARITY * NANOSEC_PER_MILLISEC);
+			sysCall.sysNanoSleep(SAMPLE_PERIOD * NANOSEC_PER_MILLISEC);
 		}
 		long totalExperimentDelay = (long) (optimizationLevel
-				* (curGlobalCounter * SAMPLE_GRANULARITY * NANOSEC_PER_MILLISEC));
+				* (curGlobalCounter * SAMPLE_PERIOD * NANOSEC_PER_MILLISEC)) / 100;
 
 		reportExperimentResults(totalExperimentDelay);
 		/*
 		 * Increase the performance experiment duration for the rest of the
 		 * execution if it has changed
 		 */
-		PERFORMANCE_EXPERIMENT_DURATION = samplesPerExperiment * SAMPLE_GRANULARITY;
+		PERFORMANCE_EXPERIMENT_DURATION = samplesPerExperiment * SAMPLE_PERIOD;
 	}
 
 	private static int randomLine(String fileToProfile) {
@@ -152,7 +152,7 @@ public class Coff {
 		// Get a random number from 0-100 (with appropriate distribution)
 		double ans = 2.0 * Math.max(Math.random() - 0.5, 0.0);
 		int intAns = (int) (ans * 100);
-		if (ans != 0.0) {
+		if (intAns != 0) {
 			// Round it to nearest 5%
 			intAns = 5 * (intAns / 5);
 		}
@@ -168,7 +168,7 @@ public class Coff {
 		VM.sysWriteln();
 	}
 
-	private static int getSamplesInThread(List<Element> stack) {
+	private static int getSamplesInMethod(List<Element> stack) {
 		int numSamplesInMethod = 0;
 		for (Element e : stack) {
 			if (e.getLineNumber() == lineToProfile && e.getFileName().equals(fileToProfile)) {
@@ -183,7 +183,7 @@ public class Coff {
 	private static void addDelays() {
 		for (int i = 0; i < applicationThreads.size(); i++) {
 			long delay = (long) (optimizationLevel
-					* ((curGlobalCounter - curThreadCounters[i]) * SAMPLE_GRANULARITY * NANOSEC_PER_MILLISEC) / 100);
+					* ((curGlobalCounter - curThreadCounters[i]) * SAMPLE_PERIOD * NANOSEC_PER_MILLISEC)) / 100;
 			delayThread(applicationThreads.get(i), delay);
 			curThreadCounters[i] = curGlobalCounter;
 			totalDelay += delay;
