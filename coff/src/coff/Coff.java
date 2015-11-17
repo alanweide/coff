@@ -4,7 +4,9 @@ import static org.jikesrvm.runtime.SysCall.sysCall;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.jikesrvm.VM;
 import org.jikesrvm.runtime.StackTrace.Element;
@@ -12,7 +14,7 @@ import org.jikesrvm.scheduler.RVMThread;
 
 public class Coff {
 
-	private static final boolean DEBUG = true;
+	private static final boolean DEBUG = false;
 
 	/**
 	 * Base duration of performance experiment in ms
@@ -24,7 +26,7 @@ public class Coff {
 	/**
 	 * Time in ms between samples
 	 */
-	private static final int SAMPLE_GRANULARITY = 10;
+	private static final int SAMPLE_GRANULARITY = 5;
 
 	/**
 	 * Time in ms after experiment is completed to "cool down"; should be >=
@@ -43,20 +45,27 @@ public class Coff {
 
 	private static List<RVMThread> applicationThreads;
 	private static int[] curThreadCounters;
+	private static Map<String, Integer> totalSamplesByLine;
 
 	private static long totalDelay;
+	private static long realTotalDelay = 0;
 
 	// private static int lineToProfile;
 	// private static String fileToProfile;
 	// private static double optimizationLevel;
 	private static int curGlobalCounter;
+	private static int totalSamplesThisExperiment;
 
-	private static long totalSamples;
 	private static long startTime;
+
+	static {
+		totalSamplesByLine = new HashMap<String, Integer>();
+	}
 
 	public static Thread start() {
 		if (DEBUG) {
 			VM.sysWriteln("Starting coff...");
+			System.out.println("Starting coff...");
 		}
 		Thread coffThread = new Thread(new Runnable() {
 
@@ -85,6 +94,7 @@ public class Coff {
 		double optimizationLevel = randOptLevel();
 		curGlobalCounter = 0;
 		totalDelay = 0;
+		totalSamplesThisExperiment = 0;
 
 		int samplesPerExperiment = PERFORMANCE_EXPERIMENT_DURATION / SAMPLE_GRANULARITY;
 		for (int i = 1; i <= samplesPerExperiment; i++) {
@@ -135,7 +145,22 @@ public class Coff {
 		long experimentDelays = (long) (optimizationLevel
 				* (curGlobalCounter * SAMPLE_GRANULARITY * NANOSEC_PER_MILLISEC));
 
-		reportExperimentResults(experimentDelays, lineToProfile, fileToProfile, optimizationLevel);
+		/*
+		 * Keep track of the number of samples in each line to report at the end
+		 */
+		String pureLine = fileToProfile + ":" + lineToProfile;
+		if (totalSamplesByLine.containsKey(pureLine)) {
+			int oldSamples = totalSamplesByLine.get(pureLine);
+			oldSamples += totalSamplesThisExperiment;
+			totalSamplesByLine.put(pureLine, oldSamples);
+		} else {
+			totalSamplesByLine.put(pureLine, totalSamplesThisExperiment);
+		}
+
+		realTotalDelay += totalDelay;
+
+		reportExperimentResults(totalSamplesThisExperiment, experimentDelays, lineToProfile, fileToProfile,
+				optimizationLevel);
 		/*
 		 * Increase the performance experiment duration for the rest of the
 		 * execution if it has changed
@@ -144,9 +169,9 @@ public class Coff {
 	}
 
 	private static int randomLine(String fileToProfile) {
-		return (Math.random() < 0.5 ? 7 : 13);
+		return (Math.random() < 0.5 ? 9 : 16);
 		/*
-		 * TODO: make this a random line from all source files
+		 * TODO: make this better
 		 */
 	}
 
@@ -161,28 +186,49 @@ public class Coff {
 		return intAns / 100.0;
 	}
 
-	private static void reportExperimentResults(long experimentDelays, int lineToProfile, String fileToProfile,
-			double optimizationLevel) {
-		VM.sysWriteln("Effective duration = "
-				+ (PERFORMANCE_EXPERIMENT_DURATION - (experimentDelays / NANOSEC_PER_MILLISEC)));
-		VM.sysWriteln("Line sampled = " + fileToProfile + " line " + lineToProfile);
-		VM.sysWriteln("Virtual optimization = " + optimizationLevel);
+	private static void reportExperimentResults(int selectedSamples, long experimentDelays, int lineToProfile,
+			String fileToProfile, double optimizationLevel) {
+		VM.sysWrite("expteriment\tselected=" + fileToProfile + ":" + lineToProfile);
+		System.out.print("expteriment\tselected=" + fileToProfile + ":" + lineToProfile);
+		VM.sysWrite("\tspeedup=" + optimizationLevel + "\tload-amp=1.00");
+		System.out.print("\tspeedup=" + optimizationLevel + "\tload-amp=1.00");
+		VM.sysWrite("\tduration=" + ((PERFORMANCE_EXPERIMENT_DURATION * NANOSEC_PER_MILLISEC) - experimentDelays));
+		System.out.print("\tduration=" + ((PERFORMANCE_EXPERIMENT_DURATION * NANOSEC_PER_MILLISEC) - experimentDelays));
+		VM.sysWrite("\tselected-samples=" + selectedSamples);
+		System.out.print("\tselected-samples=" + selectedSamples);
+		// TODO: do something about progress points
+		VM.sysWrite(
+				"\nlatency-point\tname=prgm\tarrivals=0\tdepartures=0\tdifference=8315181989144206832\nthroughput-point\tname=prgm [departures]\tdelta=0");
+		System.out.print(
+				"\nlatency-point\tname=prgm\tarrivals=0\tdepartures=0\tdifference=8315181989144206832\nthroughput-point\tname=prgm [departures]\tdelta=0");
 		VM.sysWriteln();
+		System.out.println();
 	}
 
 	private static int getSamplesInThread(List<Element> stack, int lineToProfile, String fileToProfile) {
 		int numSamplesInMethod = 0;
-		for (Element e : stack) {
+		for (int i = 0; i < stack.size(); i++) {
+			Element e = stack.get(i);
 			if (e.getLineNumber() == lineToProfile && e.getFileName().equals(fileToProfile)) {
 				numSamplesInMethod++;
-				curGlobalCounter++;
-				totalSamples++;
+				/*
+				 * TODO: this is an optimzation described in the paper; test it.
+				 */
+				// curGlobalCounter++;
+				totalSamplesThisExperiment++;
+
+				// Get at most one sample from this line in this stack;
+				// recursive functions should only count once
+				break;
 			}
 		}
 		return numSamplesInMethod;
 	}
 
 	private static void addDelays(double optimizationLevel) {
+		for (int threadCounter : curThreadCounters) {
+			curGlobalCounter = Math.max(curGlobalCounter, threadCounter);
+		}
 		for (int i = 0; i < applicationThreads.size(); i++) {
 			long delay = (long) (optimizationLevel
 					* ((curGlobalCounter - curThreadCounters[i]) * SAMPLE_GRANULARITY * NANOSEC_PER_MILLISEC));
@@ -194,7 +240,8 @@ public class Coff {
 
 	private static void delayThread(final RVMThread thr, final long delay) {
 		/*
-		 * Need to delay thread on a separate thread from the main coff thread
+		 * Need to create a separate thread to handshake with the thread we want
+		 * to delay
 		 */
 		Thread delayThread = new Thread(new Runnable() {
 
@@ -217,10 +264,17 @@ public class Coff {
 	}
 
 	public static void cleanup() {
-		// TODO: Report more useful things, including printing the output to a
-		// profile file
+		/*
+		 * TODO: Report more useful things, including printing the output to a
+		 * profile file
+		 */
 		long durationInMs = new Date().getTime() - startTime;
-		VM.sysWriteln("\nTotal Runtime: " + durationInMs / 1000.0 + " s");
+		VM.sysWriteln("runtime time=" + (durationInMs * NANOSEC_PER_MILLISEC - realTotalDelay));
+		System.out.println("runtime time=" + (durationInMs * NANOSEC_PER_MILLISEC - realTotalDelay));
+		for (Map.Entry<String, Integer> pair : totalSamplesByLine.entrySet()) {
+			VM.sysWriteln("samples location=" + pair.getKey() + "\tcount=" + pair.getValue());
+			System.out.println("samples location=" + pair.getKey() + "\tcount=" + pair.getValue());
+		}
 
 	}
 

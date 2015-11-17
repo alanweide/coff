@@ -4,14 +4,16 @@ import java.util.Date;
 
 public class Test {
 	private static void a() {
-		for (int i = 0; i < 2000000000; i++) {
-
+		int i = 0;
+		while (i < 2000000000) {
+			i++;
 		}
 	}
 
 	private static void b() {
-		for (int i = 0; i < 1900000000; i++) {
-
+		int i = 0;
+		while (i < 1900000000) {
+			i++;
 		}
 	}
 
@@ -33,10 +35,10 @@ public class Test {
 		});
 		a.start();
 		b.start();
-		System.out.println("Started both threads");
+		// System.out.println("Started both threads");
 		b.join();
 		a.join();
 		double secondsElapsed = (new Date().getTime() - start.getTime()) / 1000.0;
-		System.out.println("Ran test in " + secondsElapsed + " seconds");
+		// System.out.println("Ran test in " + secondsElapsed + " seconds");
 	}
 }
