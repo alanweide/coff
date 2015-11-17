@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Test {
 	private static void a() {
-		for (int i = 0; i < 200000000; i++) {
+		for (int i = 0; i < 2000000000; i++) {
 
 		}
 	}

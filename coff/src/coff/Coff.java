@@ -46,9 +46,9 @@ public class Coff {
 
 	private static long totalDelay;
 
-	//private static int lineToProfile;
-	//private static String fileToProfile;
-	//private static double optimizationLevel;
+	// private static int lineToProfile;
+	// private static String fileToProfile;
+	// private static double optimizationLevel;
 	private static int curGlobalCounter;
 
 	private static long totalSamples;
@@ -83,7 +83,8 @@ public class Coff {
 		String fileToProfile = "Test.java";
 		int lineToProfile = randomLine(fileToProfile);
 		double optimizationLevel = randOptLevel();
-		curGlobalCounter=0;
+		curGlobalCounter = 0;
+		totalDelay = 0;
 
 		int samplesPerExperiment = PERFORMANCE_EXPERIMENT_DURATION / SAMPLE_GRANULARITY;
 		for (int i = 1; i <= samplesPerExperiment; i++) {
@@ -149,18 +150,19 @@ public class Coff {
 		 */
 	}
 
-	private static int randOptLevel() {
+	private static double randOptLevel() {
 		// Get a random number from 0-1 (with appropriate distribution)
 		double ans = 2.0 * Math.max(Math.random() - 0.5, 0.0);
-		int intAns = 0;
-		if (ans != 0.0) {
+		int intAns = (int) Math.floor(ans * 100);
+		if (intAns != 0) {
 			// Round it to nearest 5%
-			intAns = 5 * (int) (ans * (1 / 5));
+			intAns = 5 * (intAns / 5);
 		}
-		return intAns;
+		return intAns / 100.0;
 	}
 
-	private static void reportExperimentResults(long experimentDelays, int lineToProfile, String fileToProfile, double optimizationLevel) {
+	private static void reportExperimentResults(long experimentDelays, int lineToProfile, String fileToProfile,
+			double optimizationLevel) {
 		VM.sysWriteln("Effective duration = "
 				+ (PERFORMANCE_EXPERIMENT_DURATION - (experimentDelays / NANOSEC_PER_MILLISEC)));
 		VM.sysWriteln("Line sampled = " + fileToProfile + " line " + lineToProfile);

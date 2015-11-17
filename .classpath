@@ -15,7 +15,7 @@
 	<classpathentry kind="src" path="eclipse/gen-config"/>
 	<classpathentry kind="src" path="eclipse/gen-arch"/>
 	<classpathentry kind="src" path="coff/src"/>
-	<classpathentry exported="true" kind="lib" path="eclipse/classpath.jar"/>
+	<classpathentry kind="lib" path="eclipse/classpath.jar"/>
 	<classpathentry kind="lib" path="eclipse/hamcrest.jar"/>
 	<classpathentry kind="lib" path="eclipse/junit.jar"/>
 	<classpathentry kind="lib" path="eclipse/mockito.jar"/>
