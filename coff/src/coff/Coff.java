@@ -2,6 +2,11 @@ package coff;
 
 import static org.jikesrvm.runtime.SysCall.sysCall;
 
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -107,7 +112,7 @@ public class Coff {
 			List<List<Element>> usefulStacks = new ArrayList<List<Element>>();
 			applicationThreads = new ArrayList<RVMThread>();
 			for (int j = 0; j < RVMThread.numThreads; j++) {
-				RVMThread thr = RVMThread.threads[j];
+				RVMThread thr = RVMThread.threads[j];	//sometimes throws abnormal termination of RVMs
 				if (thr != null && thr.isAlive() && !thr.isBootThread() && !thr.isDaemonThread()
 						&& !thr.isSystemThread()) {
 					thr.beginPairHandshake();
@@ -169,7 +174,31 @@ public class Coff {
 	}
 
 	private static int randomLine(String fileToProfile) {
-		return (Math.random() < 0.5 ? 9 : 16);
+		int numOfLines=20;
+		//FileNotFound Exception
+       /* byte[] c = new byte[1024];
+        int readChars = 0;
+        boolean empty = true;
+        try{
+		 InputStream is = new BufferedInputStream(new FileInputStream(fileToProfile));
+		    try {
+		        while ((readChars = is.read(c)) != -1) {
+		            empty = false;
+		            for (int i = 0; i < readChars; ++i) {
+		                if (c[i] == '\n') {
+		                    ++numOfLines;
+		                }
+		            }
+		        }
+		    } finally {
+		        is.close();
+		    }
+		    }catch(IOException e){
+		    	e.printStackTrace();
+		    }
+        VM.sysWriteln("Number of line in "+fileToProfile+numOfLines);*/
+		int x=(int) (Math.random()*100)%numOfLines;
+		return x;
 		/*
 		 * TODO: make this better
 		 */
