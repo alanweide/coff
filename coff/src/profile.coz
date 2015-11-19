@@ -1,0 +1,1068 @@
+expteriment	selected=Test.java:16	speedup=0.9	load-amp=1.00	duration=19000000	selected-samples=18
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.8	load-amp=1.00	duration=20000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.4	load-amp=1.00	duration=60000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.05	load-amp=1.00	duration=95000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.45	load-amp=1.00	duration=55000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.35	load-amp=1.00	duration=65000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.3	load-amp=1.00	duration=70000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.65	load-amp=1.00	duration=35000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.15	load-amp=1.00	duration=85000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.15	load-amp=1.00	duration=85000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.95	load-amp=1.00	duration=5000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.5	load-amp=1.00	duration=50000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+runtime time=5018000000
+samples location=Test.java:16	count=318
+samples location=Test.java:9	count=260
+expteriment	selected=Test.java:9	speedup=0.65	load-amp=1.00	duration=38250000	selected-samples=19
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.15	load-amp=1.00	duration=85000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.9	load-amp=1.00	duration=10000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.5	load-amp=1.00	duration=50000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.3	load-amp=1.00	duration=70000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.75	load-amp=1.00	duration=25000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.35	load-amp=1.00	duration=65000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.95	load-amp=1.00	duration=5000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.15	load-amp=1.00	duration=85000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.8	load-amp=1.00	duration=20000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+runtime time=4785500000
+samples location=Test.java:16	count=260
+samples location=Test.java:9	count=279
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=19
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.9	load-amp=1.00	duration=10000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.35	load-amp=1.00	duration=65000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.25	load-amp=1.00	duration=75000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.15	load-amp=1.00	duration=85000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.85	load-amp=1.00	duration=15000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.75	load-amp=1.00	duration=25000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.05	load-amp=1.00	duration=95000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.15	load-amp=1.00	duration=85000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.9	load-amp=1.00	duration=10000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.1	load-amp=1.00	duration=90000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.05	load-amp=1.00	duration=95000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+runtime time=5333000000
+samples location=Test.java:16	count=320
+samples location=Test.java:9	count=199
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=19
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.7	load-amp=1.00	duration=30000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.55	load-amp=1.00	duration=45000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.3	load-amp=1.00	duration=70000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.7	load-amp=1.00	duration=30000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.3	load-amp=1.00	duration=70000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.15	load-amp=1.00	duration=85000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.95	load-amp=1.00	duration=5000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.05	load-amp=1.00	duration=95000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.5	load-amp=1.00	duration=50000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.6	load-amp=1.00	duration=40000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.4	load-amp=1.00	duration=60000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.15	load-amp=1.00	duration=85000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.35	load-amp=1.00	duration=65000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.4	load-amp=1.00	duration=60000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+runtime time=4692000000
+samples location=Test.java:16	count=200
+samples location=Test.java:9	count=339
+expteriment	selected=Test.java:9	speedup=0.7	load-amp=1.00	duration=33500001	selected-samples=19
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.15	load-amp=1.00	duration=85000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.55	load-amp=1.00	duration=45000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.9	load-amp=1.00	duration=10000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.05	load-amp=1.00	duration=95000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.65	load-amp=1.00	duration=35000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.15	load-amp=1.00	duration=85000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.9	load-amp=1.00	duration=10000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.25	load-amp=1.00	duration=75000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.15	load-amp=1.00	duration=85000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.4	load-amp=1.00	duration=60000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.75	load-amp=1.00	duration=25000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.65	load-amp=1.00	duration=35000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.9	load-amp=1.00	duration=10000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.45	load-amp=1.00	duration=95500000	selected-samples=2
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.15	load-amp=1.00	duration=85000000runtime time=4786000000
+	selected-samples=20samples location=Test.java:16	count=242
+
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0samples location=Test.java:9	count=319
+
+expteriment	selected=Test.java:16	speedup=0.25	load-amp=1.00	duration=76250000	selected-samples=19
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.7	load-amp=1.00	duration=30000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.4	load-amp=1.00	duration=60000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.1	load-amp=1.00	duration=90000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.15	load-amp=1.00	duration=85000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.25	load-amp=1.00	duration=75000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.7	load-amp=1.00	duration=30000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.95	load-amp=1.00	duration=5000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.9	load-amp=1.00	duration=10000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.5	load-amp=1.00	duration=50000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.05	load-amp=1.00	duration=95000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.6	load-amp=1.00	duration=40000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.8	load-amp=1.00	duration=20000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.3	load-amp=1.00	duration=70000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.75	load-amp=1.00	duration=25000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.6	load-amp=1.00	duration=70000000	selected-samples=10
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+runtime time=4778500000
+samples location=Test.java:16	count=329
+samples location=Test.java:9	count=260
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=19
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.45	load-amp=1.00	duration=55000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.1	load-amp=1.00	duration=90000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.95	load-amp=1.00	duration=5000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.65	load-amp=1.00	duration=35000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.95	load-amp=1.00	duration=5000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.75	load-amp=1.00	duration=25000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.65	load-amp=1.00	duration=35000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.2	load-amp=1.00	duration=80000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.65	load-amp=1.00	duration=35000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.2	load-amp=1.00	duration=80000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.85	load-amp=1.00	duration=15000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.1	load-amp=1.00	duration=90000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.8	load-amp=1.00	duration=20000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.25	load-amp=1.00	duration=75000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.8	load-amp=1.00	duration=48000000	selected-samples=13
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.4	load-amp=1.00	duration=60000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+runtime time=5041000000
+samples location=Test.java:16	count=200
+samples location=Test.java:9	count=392
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=19
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.2	load-amp=1.00	duration=80000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.8	load-amp=1.00	duration=20000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.5	load-amp=1.00	duration=50000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.95	load-amp=1.00	duration=5000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.75	load-amp=1.00	duration=25000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.7	load-amp=1.00	duration=30000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.5	load-amp=1.00	duration=50000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.6	load-amp=1.00	duration=40000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.4	load-amp=1.00	duration=60000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.1	load-amp=1.00	duration=90000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.15	load-amp=1.00	duration=85000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.7	load-amp=1.00	duration=30000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.45	load-amp=1.00	duration=55000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.65	load-amp=1.00	duration=35000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.3	load-amp=1.00	duration=70000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+runtime time=4826000000
+samples location=Test.java:16	count=219
+samples location=Test.java:9	count=360
+expteriment	selected=Test.java:16	speedup=0.85	load-amp=1.00	duration=19250000	selected-samples=19
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.35	load-amp=1.00	duration=65000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.55	load-amp=1.00	duration=45000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.05	load-amp=1.00	duration=95000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.05	load-amp=1.00	duration=95000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.15	load-amp=1.00	duration=85000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.2	load-amp=1.00	duration=80000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.25	load-amp=1.00	duration=75000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.95	load-amp=1.00	duration=5000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.1	load-amp=1.00	duration=90000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.5	load-amp=1.00	duration=50000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.95	load-amp=1.00	duration=5000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.55	load-amp=1.00	duration=45000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.3	load-amp=1.00	duration=70000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.9	load-amp=1.00	duration=10000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.25	load-amp=1.00	duration=75000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.3	load-amp=1.00	duration=70000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.05	load-amp=1.00	duration=99250000	selected-samples=3
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+runtime time=5103000000
+samples location=Test.java:16	count=262
+samples location=Test.java:9	count=300
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=19
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.7	load-amp=1.00	duration=30000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.15	load-amp=1.00	duration=85000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.1	load-amp=1.00	duration=90000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.9	load-amp=1.00	duration=10000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.4	load-amp=1.00	duration=60000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.65	load-amp=1.00	duration=35000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.7	load-amp=1.00	duration=30000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.3	load-amp=1.00	duration=70000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.3	load-amp=1.00	duration=70000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.45	load-amp=1.00	duration=55000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+runtime time=5764250000
+samples location=Test.java:16	count=259
+samples location=Test.java:9	count=340
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=19
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.2	load-amp=1.00	duration=80000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.25	load-amp=1.00	duration=75000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.55	load-amp=1.00	duration=45000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.45	load-amp=1.00	duration=55000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.85	load-amp=1.00	duration=15000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.75	load-amp=1.00	duration=25000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.15	load-amp=1.00	duration=85000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.65	load-amp=1.00	duration=35000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.8	load-amp=1.00	duration=20000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.8	load-amp=1.00	duration=20000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.6	load-amp=1.00	duration=40000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.9	load-amp=1.00	duration=10000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.6	load-amp=1.00	duration=40000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.05	load-amp=1.00	duration=95000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.5	load-amp=1.00	duration=50000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.7	load-amp=1.00	duration=51000000	selected-samples=14
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.85	load-amp=1.00	duration=15000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+runtime time=4699000000
+samples location=Test.java:16	count=334
+samples location=Test.java:9	count=239
+expteriment	selected=Test.java:9	speedup=0.65	load-amp=1.00	duration=38250000	selected-samples=19
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.75	load-amp=1.00	duration=25000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.1	load-amp=1.00	duration=90000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.1	load-amp=1.00	duration=90000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.15	load-amp=1.00	duration=85000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.1	load-amp=1.00	duration=90000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.55	load-amp=1.00	duration=45000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.85	load-amp=1.00	duration=15000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.4	load-amp=1.00	duration=60000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.05	load-amp=1.00	duration=95000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.5	load-amp=1.00	duration=50000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:16	speedup=0.85	load-amp=1.00	duration=15000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+expteriment	selected=Test.java:9	speedup=0.9	load-amp=1.00	duration=10000000	selected-samples=20
+latency-point	name=prgm	arrivals=0	departures=0	difference=8315181989144206832
+throughput-point	name=prgm [departures]	delta=0
+runtime time=5262000000
+samples location=Test.java:16	count=340
+samples location=Test.java:9	count=239
