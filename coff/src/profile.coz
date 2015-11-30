@@ -1,0 +1,529 @@
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=9
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.2	load-amp=1.00	duration=80000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.5	load-amp=1.00	duration=50000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.2	load-amp=1.00	duration=80000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.9	load-amp=1.00	duration=10000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.5	load-amp=1.00	duration=50000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.95	load-amp=1.00	duration=5000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.35	load-amp=1.00	duration=65000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.3	load-amp=1.00	duration=70000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.75	load-amp=1.00	duration=25000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.4	load-amp=1.00	duration=60000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.2	load-amp=1.00	duration=80000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.5	load-amp=1.00	duration=50000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.25	load-amp=1.00	duration=75000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.45	load-amp=1.00	duration=55000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.15	load-amp=1.00	duration=85000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.45	load-amp=1.00	duration=55000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.6	load-amp=1.00	duration=40000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.45	load-amp=1.00	duration=55000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=3
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=0
+throughput-point	name=end	delta=10
+runtime time=6503000000
+samples location=Test.java:7	count=189
+samples location=Test.java:12	count=223
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=9
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.35	load-amp=1.00	duration=65000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.55	load-amp=1.00	duration=45000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.6	load-amp=1.00	duration=40000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.15	load-amp=1.00	duration=85000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.8	load-amp=1.00	duration=20000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.55	load-amp=1.00	duration=45000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.7	load-amp=1.00	duration=30000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.85	load-amp=1.00	duration=15000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.3	load-amp=1.00	duration=70000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.95	load-amp=1.00	duration=5000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.65	load-amp=1.00	duration=35000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=0
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+runtime time=6470000000
+samples location=Test.java:7	count=180
+samples location=Test.java:12	count=229
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=9
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.85	load-amp=1.00	duration=15000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.55	load-amp=1.00	duration=45000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.1	load-amp=1.00	duration=90000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.1	load-amp=1.00	duration=90000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.05	load-amp=1.00	duration=95000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.55	load-amp=1.00	duration=45000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.35	load-amp=1.00	duration=65000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.75	load-amp=1.00	duration=25000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.4	load-amp=1.00	duration=60000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.2	load-amp=1.00	duration=80000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.3	load-amp=1.00	duration=70000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.55	load-amp=1.00	duration=45000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.5	load-amp=1.00	duration=50000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.55	load-amp=1.00	duration=45000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.5	load-amp=1.00	duration=50000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.7	load-amp=1.00	duration=30000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.55	load-amp=1.00	duration=45000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.6	load-amp=1.00	duration=40000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.1	load-amp=1.00	duration=90000000	selected-samples=10
+throughput-point	name=end	delta=10
+runtime time=6499000000
+samples location=Test.java:7	count=269
+samples location=Test.java:12	count=150
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=9
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.75	load-amp=1.00	duration=25000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.05	load-amp=1.00	duration=95000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.55	load-amp=1.00	duration=45000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.65	load-amp=1.00	duration=35000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.6	load-amp=1.00	duration=40000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.55	load-amp=1.00	duration=45000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.95	load-amp=1.00	duration=5000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.2	load-amp=1.00	duration=80000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.2	load-amp=1.00	duration=80000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.7	load-amp=1.00	duration=30000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.05	load-amp=1.00	duration=95000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.65	load-amp=1.00	duration=35000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.45	load-amp=1.00	duration=55000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.75	load-amp=1.00	duration=25000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.7	load-amp=1.00	duration=30000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.8	load-amp=1.00	duration=20000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.4	load-amp=1.00	duration=60000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.1	load-amp=1.00	duration=90000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=0
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000runtime time=6437000000
+	selected-samples=10samples location=Test.java:7	count=219
+
+throughput-point	name=end	delta=10samples location=Test.java:12	count=200
+
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.5	load-amp=1.00	duration=50000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.3	load-amp=1.00	duration=70000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.75	load-amp=1.00	duration=25000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.05	load-amp=1.00	duration=95000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.8	load-amp=1.00	duration=20000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.2	load-amp=1.00	duration=80000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.7	load-amp=1.00	duration=30000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.6	load-amp=1.00	duration=40000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.55	load-amp=1.00	duration=45000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.1	load-amp=1.00	duration=90000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.25	load-amp=1.00	duration=75000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.1	load-amp=1.00	duration=90000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.05	load-amp=1.00	duration=95000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.25	load-amp=1.00	duration=75000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.65	load-amp=1.00	duration=35000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.85	load-amp=1.00	duration=15000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.35	load-amp=1.00	duration=65000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.95	load-amp=1.00	duration=5000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=8
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=0
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.55	load-amp=1.00	duration=100000000	selected-samples=0
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.05	load-amp=1.00	duration=100000000	selected-samples=0
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.25	load-amp=1.00	duration=100000000	selected-samples=0
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000runtime time=7175000000
+	selected-samples=0samples location=Test.java:7	count=200
+
+throughput-point	name=end	delta=10samples location=Test.java:12	count=218
+
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=9
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.45	load-amp=1.00	duration=55000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.55	load-amp=1.00	duration=45000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.55	load-amp=1.00	duration=45000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.65	load-amp=1.00	duration=35000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.95	load-amp=1.00	duration=5000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.6	load-amp=1.00	duration=40000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.3	load-amp=1.00	duration=70000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.3	load-amp=1.00	duration=70000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.95	load-amp=1.00	duration=5000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.25	load-amp=1.00	duration=75000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.15	load-amp=1.00	duration=85000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.7	load-amp=1.00	duration=30000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.55	load-amp=1.00	duration=45000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.8	load-amp=1.00	duration=20000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.15	load-amp=1.00	duration=85000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.55	load-amp=1.00	duration=45000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.05	load-amp=1.00	duration=95000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.5	load-amp=1.00	duration=50000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.65	load-amp=1.00	duration=35000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.5	load-amp=1.00	duration=50000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.65	load-amp=1.00	duration=35000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.7	load-amp=1.00	duration=30000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.8	load-amp=1.00	duration=20000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.75	load-amp=1.00	duration=25000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:7	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=0
+throughput-point	name=end	delta=10
+experiment	selected=Test.java:12	speedup=0.0	load-amp=1.00	duration=100000000	selected-samples=10
+throughput-point	name=end	delta=10

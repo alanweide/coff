@@ -187,7 +187,7 @@ public class Coff {
 		/*
 		 * TODO: make this better
 		 */
-		return (Math.random() > 0.5) ? 7 : 13;
+		return (Math.random() > 0.5) ? 7 : 12;
 	}
 
 	private static double randOptLevel() {
@@ -212,8 +212,8 @@ public class Coff {
 		VM.sysWrite("\tselected-samples=" + selectedSamples);
 		System.out.print("\tselected-samples=" + selectedSamples);
 		// TODO: do something about progress points
-		VM.sysWrite("\nthroughput-point\tname=end\tdelta=1");
-		System.out.print("\nthroughput-point\tname=end\tdelta=1");
+		VM.sysWrite("\nthroughput-point\tname=end\tdelta=10");
+		System.out.print("\nthroughput-point\tname=end\tdelta=10");
 		VM.sysWriteln();
 		System.out.println();
 	}

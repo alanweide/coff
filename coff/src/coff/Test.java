@@ -4,16 +4,12 @@ import java.util.Date;
 
 public class Test {
 	private static void a() {
-		int i = 0;
-		while (i < 2000000000) {
-			i++;
+		for (int i = 0; i < 2000000000; i++) {
 		}
 	}
 
 	private static void b() {
-		int i = 0;
-		while (i < 1900000000) {
-			i++;
+		for (int i = 0; i < 1900000000; i++) {
 		}
 	}
 
