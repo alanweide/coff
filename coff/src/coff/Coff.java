@@ -2,11 +2,6 @@ package coff;
 
 import static org.jikesrvm.runtime.SysCall.sysCall;
 
-import java.io.BufferedInputStream;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -31,7 +26,7 @@ public class Coff {
 	/**
 	 * Time in ms between samples
 	 */
-	private static final int SAMPLE_GRANULARITY = 5;
+	private static final int SAMPLE_GRANULARITY = 10;
 
 	/**
 	 * Time in ms after experiment is completed to "cool down"; should be >=
@@ -44,7 +39,7 @@ public class Coff {
 	 * for an experiment to be deemed "valid". If there are not enough samples
 	 * in a particular experiment, that experiment's time is doubled.
 	 */
-	private static final int MIN_SAMPLES_PER_EXPERIMENT = 2;
+	private static final int MIN_SAMPLES_PER_EXPERIMENT = 0;
 
 	private static final long NANOSEC_PER_MILLISEC = 1000000L;
 
@@ -112,7 +107,9 @@ public class Coff {
 			List<List<Element>> usefulStacks = new ArrayList<List<Element>>();
 			applicationThreads = new ArrayList<RVMThread>();
 			for (int j = 0; j < RVMThread.numThreads; j++) {
-				RVMThread thr = RVMThread.threads[j];	//sometimes throws abnormal termination of RVMs
+				RVMThread thr = RVMThread.threads[j]; // sometimes throws
+														// abnormal termination
+														// of RVMs
 				if (thr != null && thr.isAlive() && !thr.isBootThread() && !thr.isDaemonThread()
 						&& !thr.isSystemThread()) {
 					thr.beginPairHandshake();
@@ -174,34 +171,23 @@ public class Coff {
 	}
 
 	private static int randomLine(String fileToProfile) {
-		int numOfLines=20;
-		//FileNotFound Exception
-       /* byte[] c = new byte[1024];
-        int readChars = 0;
-        boolean empty = true;
-        try{
-		 InputStream is = new BufferedInputStream(new FileInputStream(fileToProfile));
-		    try {
-		        while ((readChars = is.read(c)) != -1) {
-		            empty = false;
-		            for (int i = 0; i < readChars; ++i) {
-		                if (c[i] == '\n') {
-		                    ++numOfLines;
-		                }
-		            }
-		        }
-		    } finally {
-		        is.close();
-		    }
-		    }catch(IOException e){
-		    	e.printStackTrace();
-		    }
-        VM.sysWriteln("Number of line in "+fileToProfile+numOfLines);*/
-		int x=(int) (Math.random()*100)%numOfLines;
-		return x;
+		int numOfLines = 20;
+		// FileNotFound Exception
+		/*
+		 * byte[] c = new byte[1024]; int readChars = 0; boolean empty = true;
+		 * try{ InputStream is = new BufferedInputStream(new
+		 * FileInputStream(fileToProfile)); try { while ((readChars =
+		 * is.read(c)) != -1) { empty = false; for (int i = 0; i < readChars;
+		 * ++i) { if (c[i] == '\n') { ++numOfLines; } } } } finally {
+		 * is.close(); } }catch(IOException e){ e.printStackTrace(); }
+		 * VM.sysWriteln("Number of line in "+fileToProfile+numOfLines);
+		 */
+		// int x = (int) (Math.random() * 100) % numOfLines;
+		// return x;
 		/*
 		 * TODO: make this better
 		 */
+		return (Math.random() > 0.5) ? 7 : 13;
 	}
 
 	private static double randOptLevel() {
@@ -217,8 +203,8 @@ public class Coff {
 
 	private static void reportExperimentResults(int selectedSamples, long experimentDelays, int lineToProfile,
 			String fileToProfile, double optimizationLevel) {
-		VM.sysWrite("expteriment\tselected=" + fileToProfile + ":" + lineToProfile);
-		System.out.print("expteriment\tselected=" + fileToProfile + ":" + lineToProfile);
+		VM.sysWrite("experiment\tselected=" + fileToProfile + ":" + lineToProfile);
+		System.out.print("experiment\tselected=" + fileToProfile + ":" + lineToProfile);
 		VM.sysWrite("\tspeedup=" + optimizationLevel + "\tload-amp=1.00");
 		System.out.print("\tspeedup=" + optimizationLevel + "\tload-amp=1.00");
 		VM.sysWrite("\tduration=" + ((PERFORMANCE_EXPERIMENT_DURATION * NANOSEC_PER_MILLISEC) - experimentDelays));
@@ -226,10 +212,8 @@ public class Coff {
 		VM.sysWrite("\tselected-samples=" + selectedSamples);
 		System.out.print("\tselected-samples=" + selectedSamples);
 		// TODO: do something about progress points
-		VM.sysWrite(
-				"\nlatency-point\tname=prgm\tarrivals=0\tdepartures=0\tdifference=8315181989144206832\nthroughput-point\tname=prgm [departures]\tdelta=0");
-		System.out.print(
-				"\nlatency-point\tname=prgm\tarrivals=0\tdepartures=0\tdifference=8315181989144206832\nthroughput-point\tname=prgm [departures]\tdelta=0");
+		VM.sysWrite("\nthroughput-point\tname=end\tdelta=1");
+		System.out.print("\nthroughput-point\tname=end\tdelta=1");
 		VM.sysWriteln();
 		System.out.println();
 	}
