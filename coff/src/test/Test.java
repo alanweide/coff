@@ -1,16 +1,20 @@
-package coff;
+package test;
 
 import java.util.Date;
+
+import coff.ProgressPoints;
 
 public class Test {
 	private static void a() {
 		for (int i = 0; i < 2000000000; i++) {
 		}
+		ProgressPoints.CoffProgressNamed("a");
 	}
 
 	private static void b() {
 		for (int i = 0; i < 1900000000; i++) {
 		}
+		ProgressPoints.CoffProgressNamed("b");
 	}
 
 	public static void main(String[] args) throws InterruptedException {
@@ -35,6 +39,7 @@ public class Test {
 		b.join();
 		a.join();
 		double secondsElapsed = (new Date().getTime() - start.getTime()) / 1000.0;
+		ProgressPoints.CoffProgressNamed("end");
 		// System.out.println("Ran test in " + secondsElapsed + " seconds");
 	}
 }

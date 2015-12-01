@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.jikesrvm.VM;
 import org.jikesrvm.runtime.StackTrace.Element;
@@ -46,6 +47,7 @@ public class Coff {
 	private static List<RVMThread> applicationThreads;
 	private static int[] curThreadCounters;
 	private static Map<String, Integer> totalSamplesByLine;
+	private static Map<String, Integer> startCounts;
 
 	private static long totalDelay;
 	private static long realTotalDelay = 0;
@@ -61,6 +63,10 @@ public class Coff {
 	static {
 		totalSamplesByLine = new HashMap<String, Integer>();
 	}
+
+	/*
+	 * ---------------- Public Methods ----------------
+	 */
 
 	public static Thread start() {
 		if (DEBUG) {
@@ -86,6 +92,10 @@ public class Coff {
 		return coffThread;
 	}
 
+	/*
+	 * ---------------- Private Methods ----------------
+	 */
+
 	private static void performAnExperiment() throws InterruptedException {
 
 		// TODO: actually select a random line
@@ -95,6 +105,7 @@ public class Coff {
 		curGlobalCounter = 0;
 		totalDelay = 0;
 		totalSamplesThisExperiment = 0;
+		startCounts = new HashMap<String, Integer>(ProgressPoints.counts());
 
 		int samplesPerExperiment = PERFORMANCE_EXPERIMENT_DURATION / SAMPLE_GRANULARITY;
 		for (int i = 1; i <= samplesPerExperiment; i++) {
@@ -187,7 +198,7 @@ public class Coff {
 		/*
 		 * TODO: make this better
 		 */
-		return (Math.random() > 0.5) ? 7 : 12;
+		return (Math.random() > 0.5) ? 9 : 15;
 	}
 
 	private static double randOptLevel() {
@@ -205,15 +216,22 @@ public class Coff {
 			String fileToProfile, double optimizationLevel) {
 		VM.sysWrite("experiment\tselected=" + fileToProfile + ":" + lineToProfile);
 		System.out.print("experiment\tselected=" + fileToProfile + ":" + lineToProfile);
-		VM.sysWrite("\tspeedup=" + optimizationLevel + "\tload-amp=1.00");
-		System.out.print("\tspeedup=" + optimizationLevel + "\tload-amp=1.00");
+		VM.sysWrite("\tspeedup=" + optimizationLevel);
+		System.out.print("\tspeedup=" + optimizationLevel);
 		VM.sysWrite("\tduration=" + ((PERFORMANCE_EXPERIMENT_DURATION * NANOSEC_PER_MILLISEC) - experimentDelays));
 		System.out.print("\tduration=" + ((PERFORMANCE_EXPERIMENT_DURATION * NANOSEC_PER_MILLISEC) - experimentDelays));
 		VM.sysWrite("\tselected-samples=" + selectedSamples);
 		System.out.print("\tselected-samples=" + selectedSamples);
 		// TODO: do something about progress points
-		VM.sysWrite("\nthroughput-point\tname=end\tdelta=10");
-		System.out.print("\nthroughput-point\tname=end\tdelta=10");
+		for (Entry<String, Integer> progressPoint : ProgressPoints.counts().entrySet()) {
+			int startCount = startCounts.get(progressPoint.getKey());
+			if (progressPoint.getValue() != startCount) {
+				VM.sysWrite("\nthroughput-point\tname=" + progressPoint.getKey() + "\tdelta="
+						+ (progressPoint.getValue() - startCount));
+				System.out.print("\nthroughput-point\tname=" + progressPoint.getKey() + "\tdelta="
+						+ (progressPoint.getValue() - startCount));
+			}
+		}
 		VM.sysWriteln();
 		System.out.println();
 	}
