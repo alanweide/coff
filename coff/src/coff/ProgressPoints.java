@@ -6,10 +6,22 @@ import java.util.Map;
 public class ProgressPoints {
 
 	private static Map<String, Integer> progressPointCounts = new HashMap<String, Integer>();
-	private static volatile boolean coffEnabled = false;
+	private static boolean coffEnabled;
+	private volatile static boolean experimentInProgress = false;
 
 	public static void CoffProgressNamed(final String name) {
-		if (true) {
+		if (experimentInProgress) {
+			try {
+				ProgressPoints.class.wait();
+			} catch (IllegalMonitorStateException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		if (coffEnabled) {
 			new Thread(new Runnable() {
 				@Override
 				public void run() {
@@ -30,5 +42,14 @@ public class ProgressPoints {
 
 	public static Map<String, Integer> counts() {
 		return progressPointCounts;
+	}
+
+	public static void beginReport() {
+		experimentInProgress = true;
+	}
+
+	public static void endReport() {
+		experimentInProgress = false;
+		ProgressPoints.class.notifyAll();
 	}
 }

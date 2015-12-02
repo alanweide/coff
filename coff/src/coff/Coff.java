@@ -15,7 +15,7 @@ import org.jikesrvm.scheduler.RVMThread;
 
 public class Coff {
 
-	private static final boolean DEBUG = false;
+	private static final boolean DEBUG = true;
 
 	/**
 	 * Base duration of performance experiment in ms
@@ -71,9 +71,9 @@ public class Coff {
 	public static Thread start() {
 		if (DEBUG) {
 			VM.sysWriteln("Starting coff...");
-			System.out.println("Starting coff...");
 		}
-		// ProgressPoints.turnOn();
+		ProgressPoints.turnOn();
+		VM.sysWriteln("progress points enabled");
 		Thread coffThread = new Thread(new Runnable() {
 
 			@Override
@@ -90,6 +90,7 @@ public class Coff {
 			}
 		});
 		coffThread.start();
+		VM.sysWriteln("coffThread started");
 		return coffThread;
 	}
 
@@ -117,6 +118,7 @@ public class Coff {
 			 * every sample
 			 */
 			RVMThread.acctLock.lockNoHandshake();
+			VM.sysWriteln("threads locked for sample");
 			List<List<Element>> usefulStacks = new ArrayList<List<Element>>();
 			applicationThreads = new ArrayList<RVMThread>();
 			for (int j = 0; j < RVMThread.numThreads; j++) {
@@ -226,6 +228,7 @@ public class Coff {
 		VM.sysWrite("\tselected-samples=" + selectedSamples);
 		System.out.print("\tselected-samples=" + selectedSamples);
 		// TODO: do something about progress points
+		ProgressPoints.beginReport();
 		for (Entry<String, Integer> progressPoint : ProgressPoints.counts().entrySet()) {
 			String thisProgPoint = progressPoint.getKey();
 			int startCount = startCounts.get(thisProgPoint);
@@ -236,8 +239,11 @@ public class Coff {
 						+ (progressPoint.getValue() - startCount));
 			}
 		}
+		ProgressPoints.endReport();
+
 		VM.sysWriteln();
 		System.out.println();
+
 	}
 
 	private static int getSamplesInThread(List<Element> stack, int lineToProfile, String fileToProfile) {
