@@ -1,24 +1,22 @@
 package test;
 
-import java.util.Date;
-
 import coff.ProgressPoints;
 
 public class Test {
 	private static void a() {
-		for (int i = 0; i < 20000000; i++) {
+		for (int i = 0; i < 200000000; i++) {
 			ProgressPoints.CoffProgressNamed("a");
 		}
 	}
 
 	private static void b() {
-		for (int i = 0; i < 19000000; i++) {
+		for (int i = 0; i < 190000000; i++) {
 			ProgressPoints.CoffProgressNamed("b");
 		}
 	}
 
 	public static void main(String[] args) throws InterruptedException {
-		Date start = new Date();
+		// Date start = new Date();
 		Thread a = new Thread(new Runnable() {
 
 			@Override
@@ -38,8 +36,10 @@ public class Test {
 		// System.out.println("Started both threads");
 		b.join();
 		a.join();
-		double secondsElapsed = (new Date().getTime() - start.getTime()) / 1000.0;
-		ProgressPoints.CoffProgressNamed("end");
+		// double secondsElapsed = (new Date().getTime() - start.getTime()) /
+		// 1000.0;
+		// System.out.println("Done");
+		// ProgressPoints.CoffProgressNamed("end");
 		// System.out.println("Ran test in " + secondsElapsed + " seconds");
 	}
 }

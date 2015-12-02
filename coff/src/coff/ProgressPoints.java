@@ -1,21 +1,34 @@
 package coff;
 
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ProgressPoints {
 
-	private static ConcurrentMap<String, Integer> progressPointCounts = new ConcurrentHashMap<String, Integer>();
+	private static Map<String, Integer> progressPointCounts = new HashMap<String, Integer>();
+	private static volatile boolean coffEnabled = false;
 
-	public static void CoffProgressNamed(String name) {
-		if (progressPointCounts.containsKey(name)) {
-			progressPointCounts.put(name, 1 + progressPointCounts.get(name));
-		} else {
-			progressPointCounts.put(name, 1);
+	public static void CoffProgressNamed(final String name) {
+		if (true) {
+			new Thread(new Runnable() {
+				@Override
+				public void run() {
+					if (progressPointCounts.containsKey(name)) {
+						int curCount = progressPointCounts.get(name);
+						progressPointCounts.put(name, 1 + curCount);
+					} else {
+						progressPointCounts.put(name, 1);
+					}
+				}
+			}).start();
 		}
 	}
 
-	public static ConcurrentMap<String, Integer> counts() {
+	public static void turnOn() {
+		coffEnabled = true;
+	}
+
+	public static Map<String, Integer> counts() {
 		return progressPointCounts;
 	}
 }

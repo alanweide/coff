@@ -73,6 +73,7 @@ public class Coff {
 			VM.sysWriteln("Starting coff...");
 			System.out.println("Starting coff...");
 		}
+		// ProgressPoints.turnOn();
 		Thread coffThread = new Thread(new Runnable() {
 
 			@Override
@@ -183,7 +184,7 @@ public class Coff {
 	}
 
 	private static int randomLine(String fileToProfile) {
-		int numOfLines = 20;
+		// int numOfLines = 20;
 		// FileNotFound Exception
 		/*
 		 * byte[] c = new byte[1024]; int readChars = 0; boolean empty = true;
@@ -199,8 +200,8 @@ public class Coff {
 		/*
 		 * TODO: make this better
 		 */
-		// return (Math.random() > 0.5) ? 10 : 16;
-		return (Math.random() > 0.5) ? 9 : 15;
+		// return (Math.random() > 0.5) ? 7 : 13;
+		return (Math.random() > 0.5) ? 8 : 14;
 	}
 
 	private static double randOptLevel() {
@@ -289,13 +290,15 @@ public class Coff {
 		delayThread.start();
 	}
 
-	private static void printStack(List<Element> stack) {
-		VM.sysWriteln("\nPrinting stack...");
-		for (Element stackElement : stack) {
-			VM.sysWriteln(stackElement.getFileName() + ": " + stackElement.getClassName() + "."
-					+ stackElement.getMethodName() + "() at line " + stackElement.getLineNumber());
-		}
-	}
+	// private static void printStack(List<Element> stack) {
+	// VM.sysWriteln("\nPrinting stack...");
+	// for (Element stackElement : stack) {
+	// VM.sysWriteln(stackElement.getFileName() + ": " +
+	// stackElement.getClassName() + "."
+	// + stackElement.getMethodName() + "() at line " +
+	// stackElement.getLineNumber());
+	// }
+	// }
 
 	public static void cleanup() {
 		/*
