@@ -105,7 +105,8 @@ public class Coff {
 		curGlobalCounter = 0;
 		totalDelay = 0;
 		totalSamplesThisExperiment = 0;
-		startCounts = new HashMap<String, Integer>(ProgressPoints.counts());
+		startCounts = new HashMap<String, Integer>();
+		startCounts.putAll(ProgressPoints.counts());
 
 		int samplesPerExperiment = PERFORMANCE_EXPERIMENT_DURATION / SAMPLE_GRANULARITY;
 		for (int i = 1; i <= samplesPerExperiment; i++) {
@@ -198,6 +199,7 @@ public class Coff {
 		/*
 		 * TODO: make this better
 		 */
+		// return (Math.random() > 0.5) ? 10 : 16;
 		return (Math.random() > 0.5) ? 9 : 15;
 	}
 
@@ -224,7 +226,8 @@ public class Coff {
 		System.out.print("\tselected-samples=" + selectedSamples);
 		// TODO: do something about progress points
 		for (Entry<String, Integer> progressPoint : ProgressPoints.counts().entrySet()) {
-			int startCount = startCounts.get(progressPoint.getKey());
+			String thisProgPoint = progressPoint.getKey();
+			int startCount = startCounts.get(thisProgPoint);
 			if (progressPoint.getValue() != startCount) {
 				VM.sysWrite("\nthroughput-point\tname=" + progressPoint.getKey() + "\tdelta="
 						+ (progressPoint.getValue() - startCount));

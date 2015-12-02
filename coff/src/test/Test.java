@@ -6,15 +6,15 @@ import coff.ProgressPoints;
 
 public class Test {
 	private static void a() {
-		for (int i = 0; i < 2000000000; i++) {
+		for (int i = 0; i < 20000000; i++) {
+			ProgressPoints.CoffProgressNamed("a");
 		}
-		ProgressPoints.CoffProgressNamed("a");
 	}
 
 	private static void b() {
-		for (int i = 0; i < 1900000000; i++) {
+		for (int i = 0; i < 19000000; i++) {
+			ProgressPoints.CoffProgressNamed("b");
 		}
-		ProgressPoints.CoffProgressNamed("b");
 	}
 
 	public static void main(String[] args) throws InterruptedException {
