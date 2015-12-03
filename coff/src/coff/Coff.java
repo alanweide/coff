@@ -15,7 +15,7 @@ import org.jikesrvm.scheduler.RVMThread;
 
 public class Coff {
 
-	private static final boolean DEBUG = true;
+	private static final boolean DEBUG = false;
 
 	/**
 	 * Base duration of performance experiment in ms
@@ -73,7 +73,8 @@ public class Coff {
 			VM.sysWriteln("Starting coff...");
 		}
 		ProgressPoints.turnOn();
-		VM.sysWriteln("progress points enabled");
+		if (DEBUG)
+			VM.sysWriteln("progress points enabled");
 		Thread coffThread = new Thread(new Runnable() {
 
 			@Override
@@ -90,7 +91,8 @@ public class Coff {
 			}
 		});
 		coffThread.start();
-		VM.sysWriteln("coffThread started");
+		if (DEBUG)
+			VM.sysWriteln("coffThread started");
 		return coffThread;
 	}
 
@@ -118,7 +120,8 @@ public class Coff {
 			 * every sample
 			 */
 			RVMThread.acctLock.lockNoHandshake();
-			VM.sysWriteln("threads locked for sample");
+			if (DEBUG)
+				VM.sysWriteln("threads locked for sample");
 			List<List<Element>> usefulStacks = new ArrayList<List<Element>>();
 			applicationThreads = new ArrayList<RVMThread>();
 			for (int j = 0; j < RVMThread.numThreads; j++) {
@@ -127,13 +130,23 @@ public class Coff {
 														// of RVMs
 				if (thr != null && thr.isAlive() && !thr.isBootThread() && !thr.isDaemonThread()
 						&& !thr.isSystemThread()) {
+					if (DEBUG)
+						VM.sysWriteln("about to handshake with thread " + thr.getName());
 					thr.beginPairHandshake();
+					if (DEBUG)
+						VM.sysWriteln("did handshake");
 					if (thr.contextRegisters != null && !thr.ignoreHandshakesAndGC()) {
 						List<Element> stack = RVMThread.getStack(thr.contextRegisters.getInnermostFramePointer());
 						applicationThreads.add(thr);
 						usefulStacks.add(stack);
 					}
 					thr.endPairHandshake();
+					// if (thr.contextRegisters != null &&
+					// !thr.ignoreHandshakesAndGC()) {
+					// List<Element> stack = RVMThread.pauseAndGetStack(thr);
+					// applicationThreads.add(thr);
+					// usefulStacks.add(stack);
+					// }
 				}
 			}
 			RVMThread.acctLock.unlock();
@@ -203,7 +216,7 @@ public class Coff {
 		 * TODO: make this better
 		 */
 		// return (Math.random() > 0.5) ? 7 : 13;
-		return (Math.random() > 0.5) ? 8 : 14;
+		return (Math.random() > 0.5) ? 5 : 11;
 	}
 
 	private static double randOptLevel() {
@@ -288,23 +301,27 @@ public class Coff {
 
 			@Override
 			public void run() {
-				thr.beginPairHandshake();
-				sysCall.sysNanoSleep(delay);
-				thr.endPairHandshake();
+				// thr.beginPairHandshake();
+				// sysCall.sysNanoSleep(delay);
+				// thr.endPairHandshake();
+				try {
+					RVMThread.sleep(thr, delay);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 		delayThread.start();
 	}
 
-	// private static void printStack(List<Element> stack) {
-	// VM.sysWriteln("\nPrinting stack...");
-	// for (Element stackElement : stack) {
-	// VM.sysWriteln(stackElement.getFileName() + ": " +
-	// stackElement.getClassName() + "."
-	// + stackElement.getMethodName() + "() at line " +
-	// stackElement.getLineNumber());
-	// }
-	// }
+	private static void printStack(List<Element> stack) {
+		VM.sysWriteln("\nPrinting stack...");
+		for (Element stackElement : stack) {
+			VM.sysWriteln(stackElement.getFileName() + ": " + stackElement.getClassName() + "."
+					+ stackElement.getMethodName() + "() at line " + stackElement.getLineNumber());
+		}
+	}
 
 	public static void cleanup() {
 		/*

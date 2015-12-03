@@ -22,6 +22,7 @@ import static org.jikesrvm.runtime.SysCall.sysCall;
 
 import java.security.AccessController;
 import java.security.PrivilegedAction;
+import java.util.List;
 
 import org.jikesrvm.ArchitectureSpecific;
 import org.jikesrvm.ArchitectureSpecific.BaselineConstants;
@@ -3221,6 +3222,39 @@ public final class RVMThread extends ThreadContext implements Constants {
 	}
 
 	/**
+	 * Suspend execution of thread thr for specified number of seconds (or
+	 * fraction).
+	 */
+	@Interruptible
+	public static void sleep(RVMThread thr, long ns) throws InterruptedException {
+		thr.waiting = Waiting.TIMED_WAITING;
+		long atStart = sysCall.sysNanoTime();
+		long whenEnd = atStart + ns;
+		thr.monitor().lockNoHandshake();
+		while (!thr.hasInterrupt && thr.asyncThrowable == null && sysCall.sysNanoTime() < whenEnd) {
+			thr.monitor().timedWaitAbsoluteWithHandshake(whenEnd);
+		}
+		boolean throwInterrupt = false;
+		Throwable throwThis = null;
+		if (thr.hasInterrupt) {
+			thr.hasInterrupt = false;
+			throwInterrupt = true;
+		}
+		if (thr.asyncThrowable != null) {
+			throwThis = thr.asyncThrowable;
+			thr.asyncThrowable = null;
+		}
+		thr.monitor().unlock();
+		thr.waiting = Waiting.RUNNABLE;
+		if (throwThis != null) {
+			RuntimeEntrypoints.athrow(throwThis);
+		}
+		if (throwInterrupt) {
+			throw new InterruptedException("sleep interrupted");
+		}
+	}
+
+	/**
 	 * Suspend execution of current thread for specified number of seconds (or
 	 * fraction).
 	 */
@@ -5324,20 +5358,21 @@ public final class RVMThread extends ThreadContext implements Constants {
 	@Interruptible
 	public static LinkedListRVM<Element> getStack(Address ip, Address fp) {
 		boolean b = Monitor.lockNoHandshake(dumpLock);
-		RVMThread t = getCurrentThread();
 		LinkedListRVM<Element> elements = new LinkedListRVM<Element>();
-		++t.inDumpStack;
-		if (t.inDumpStack > 1 && t.inDumpStack <= VM.maxSystemTroubleRecursionDepth
-				+ VM.maxSystemTroubleRecursionDepthBeforeWeStopVMSysWrite) {
-			VM.sysWrite("RVMThread.dumpStack(): in a recursive call, ");
-			VM.sysWrite(t.inDumpStack);
-			VM.sysWriteln(" deep.");
-		}
-		if (t.inDumpStack > VM.maxSystemTroubleRecursionDepth) {
-			VM.dieAbruptlyRecursiveSystemTrouble();
-			if (VM.VerifyAssertions)
-				VM._assert(VM.NOT_REACHED);
-		}
+		// RVMThread t = getCurrentThread();
+		// ++t.inDumpStack;
+		// if (t.inDumpStack > 1 && t.inDumpStack <=
+		// VM.maxSystemTroubleRecursionDepth
+		// + VM.maxSystemTroubleRecursionDepthBeforeWeStopVMSysWrite) {
+		// VM.sysWrite("RVMThread.dumpStack(): in a recursive call, ");
+		// VM.sysWrite(t.inDumpStack);
+		// VM.sysWriteln(" deep.");
+		// }
+		// if (t.inDumpStack > VM.maxSystemTroubleRecursionDepth) {
+		// VM.dieAbruptlyRecursiveSystemTrouble();
+		// if (VM.VerifyAssertions)
+		// VM._assert(VM.NOT_REACHED);
+		// }
 
 		if (!isAddressValidFramePointer(fp)) {
 			VM.sysWrite("Bogus looking frame pointer: ", fp);
@@ -5424,7 +5459,7 @@ public final class RVMThread extends ThreadContext implements Constants {
 				VM.sysWriteln("Something bad killed the stack dump. The last frame pointer was: ", fp);
 			}
 		}
-		--t.inDumpStack;
+		// --t.inDumpStack;
 
 		Monitor.unlock(b, dumpLock);
 		// return (Element[]) elements.toArray();
@@ -5667,6 +5702,34 @@ public final class RVMThread extends ThreadContext implements Constants {
 		execStatusTransitionHistogram[transitionHistogramIndex(oldState, newState)]++;
 		sloppyExecStatusHistogram[oldState]++;
 		sloppyExecStatusHistogram[newState]++;
+	}
+
+	@Interruptible
+	public static List<Element> pauseAndGetStack(RVMThread thr)
+			throws IllegalMonitorStateException, InterruptedException {
+		thr.waiting = Waiting.WAITING;
+		thr.monitor().lockNoHandshake();
+		List<Element> stack = new LinkedListRVM<Element>();
+		stack = getStack(thr.contextRegisters.getInnermostFramePointer());
+		boolean throwInterrupt = false;
+		Throwable throwThis = null;
+		if (thr.hasInterrupt) {
+			thr.hasInterrupt = false;
+			throwInterrupt = true;
+		}
+		if (thr.asyncThrowable != null) {
+			throwThis = thr.asyncThrowable;
+			thr.asyncThrowable = null;
+		}
+		thr.monitor().unlock();
+		thr.waiting = Waiting.RUNNABLE;
+		if (throwThis != null) {
+			RuntimeEntrypoints.athrow(throwThis);
+		}
+		if (throwInterrupt) {
+			throw new InterruptedException("sleep interrupted");
+		}
+		return stack;
 	}
 
 }

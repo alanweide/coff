@@ -1,17 +1,15 @@
 package test;
 
-import coff.ProgressPoints;
-
 public class Test {
 	private static void a() {
-		for (int i = 0; i < 200000000; i++) {
-			ProgressPoints.CoffProgressNamed("a");
+		for (int i = 0; i < 2000000000; i++) {
+			// ProgressPoints.CoffProgressNamed("a");
 		}
 	}
 
 	private static void b() {
-		for (int i = 0; i < 190000000; i++) {
-			ProgressPoints.CoffProgressNamed("b");
+		for (int i = 0; i < 1900000000; i++) {
+			// ProgressPoints.CoffProgressNamed("b");
 		}
 	}
 
