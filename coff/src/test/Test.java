@@ -1,15 +1,17 @@
 package test;
 
+import coff.ProgressPoints;
+
 public class Test {
 	private static void a() {
 		for (int i = 0; i < 2000000000; i++) {
-			// ProgressPoints.CoffProgressNamed("a");
+			ProgressPoints.CoffProgressNamed("a");
 		}
 	}
 
 	private static void b() {
 		for (int i = 0; i < 1900000000; i++) {
-			// ProgressPoints.CoffProgressNamed("b");
+			ProgressPoints.CoffProgressNamed("b");
 		}
 	}
 
@@ -36,7 +38,7 @@ public class Test {
 		a.join();
 		// double secondsElapsed = (new Date().getTime() - start.getTime()) /
 		// 1000.0;
-		// System.out.println("Done");
+		System.out.println("Done");
 		// ProgressPoints.CoffProgressNamed("end");
 		// System.out.println("Ran test in " + secondsElapsed + " seconds");
 	}
