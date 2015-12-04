@@ -3,4 +3,6 @@ A minimal implementation of causal profiling for Java applications running on Ji
 
 To run Coff on the microbenchmark, run the following command from the `coff/src` directory (where "rvm" is the path to the Jikes RVM executable in this repository): `rvm -Xcoff test.Test` after compiling Test.java with javac
 
+For more information about Jikes RVM, visit the [Jikes RVM website](https://jikesrvm.org). Coff is built on top of Jikes RVM version 3.1.3.
+
 Our work is based on [Coz: Finding Code that Counts with Causal Profiling](http://sigops.org/sosp/sosp15/current/2015-Monterey/printable/090-curtsinger.pdf) and you can find their code on github [here](https://github.com/plasma-umass/coz).
