@@ -45,7 +45,7 @@ public class ProgressPoints {
 		coffEnabled = true;
 	}
 
-	public static Map<String, Integer> counts() {
+	public static Map<String, Integer> allCounts() {
 		return progressPointCounts;
 	}
 

@@ -112,7 +112,7 @@ public class Coff {
 		totalDelay = 0;
 		totalSamplesThisExperiment = 0;
 		startCounts = new HashMap<String, Integer>();
-		startCounts.putAll(ProgressPoints.counts());
+		startCounts.putAll(ProgressPoints.allCounts());
 
 		int samplesPerExperiment = PERFORMANCE_EXPERIMENT_DURATION / SAMPLE_GRANULARITY;
 		for (int i = 1; i <= samplesPerExperiment; i++) {
@@ -125,43 +125,42 @@ public class Coff {
 			if (DEBUG)
 				VM.sysWriteln("threads locked for sample");
 			List<List<Element>> usefulStacks = new ArrayList<List<Element>>();
-			for (RVMThread thr : applicationThreads) {
-				thr.beginPairHandshake();
-				if (thr.contextRegisters != null && !thr.ignoreHandshakesAndGC()) {
-					List<Element> stack = RVMThread.getStack(thr.contextRegisters.getInnermostFramePointer());
-					usefulStacks.add(stack);
-				}
-				thr.endPairHandshake();
-			}
-			// applicationThreads = new ArrayList<RVMThread>();
-			// for (int j = 0; j < RVMThread.numThreads; j++) {
-			// RVMThread thr = RVMThread.threads[j]; // sometimes throws
-			// // abnormal termination
-			// // of RVMs
-			// if (thr != null && thr.isAlive() && !thr.isBootThread() &&
-			// !thr.isDaemonThread()
-			// && !thr.isSystemThread()) {
-			// if (DEBUG)
-			// VM.sysWriteln("about to handshake with thread " + thr.getName());
+			// for (RVMThread thr : applicationThreads) {
 			// thr.beginPairHandshake();
-			// if (DEBUG)
-			// VM.sysWriteln("did handshake");
 			// if (thr.contextRegisters != null && !thr.ignoreHandshakesAndGC())
 			// {
 			// List<Element> stack =
 			// RVMThread.getStack(thr.contextRegisters.getInnermostFramePointer());
-			// applicationThreads.add(thr);
 			// usefulStacks.add(stack);
 			// }
 			// thr.endPairHandshake();
-			// // if (thr.contextRegisters != null &&
-			// // !thr.ignoreHandshakesAndGC()) {
-			// // List<Element> stack = RVMThread.pauseAndGetStack(thr);
-			// // applicationThreads.add(thr);
-			// // usefulStacks.add(stack);
-			// // }
 			// }
-			// }
+			applicationThreads = new ArrayList<RVMThread>();
+			for (int j = 0; j < RVMThread.numThreads; j++) {
+				RVMThread thr = RVMThread.threads[j]; // sometimes throws
+				// abnormal termination
+				// of RVMs
+				if (thr != null && thr.isAlive() && !thr.isBootThread() && !thr.isDaemonThread()
+						&& !thr.isSystemThread()) {
+					if (DEBUG)
+						VM.sysWriteln("about to handshake with thread " + thr.getName());
+					thr.beginPairHandshake();
+					if (DEBUG)
+						VM.sysWriteln("did handshake");
+					if (thr.contextRegisters != null && !thr.ignoreHandshakesAndGC()) {
+						List<Element> stack = RVMThread.getStack(thr.contextRegisters.getInnermostFramePointer());
+						applicationThreads.add(thr);
+						usefulStacks.add(stack);
+					}
+					thr.endPairHandshake();
+					// if (thr.contextRegisters != null &&
+					// !thr.ignoreHandshakesAndGC()) {
+					// List<Element> stack = RVMThread.pauseAndGetStack(thr);
+					// applicationThreads.add(thr);
+					// usefulStacks.add(stack);
+					// }
+				}
+			}
 			RVMThread.acctLock.unlock();
 
 			/*
@@ -229,7 +228,7 @@ public class Coff {
 		 * TODO: make this better
 		 */
 		// return (Math.random() > 0.5) ? 7 : 13;
-		return (Math.random() > 0.5) ? 5 : 11;
+		return (Math.random() > 0.5) ? 8 : 14;
 	}
 
 	private static double randOptLevel() {
@@ -254,15 +253,21 @@ public class Coff {
 		VM.sysWrite("\tselected-samples=" + selectedSamples);
 		System.out.print("\tselected-samples=" + selectedSamples);
 		// TODO: do something about progress points
-		ProgressPoints.beginReport();
-		for (Entry<String, Integer> progressPoint : ProgressPoints.counts().entrySet()) {
-			String thisProgPoint = progressPoint.getKey();
-			int startCount = startCounts.get(thisProgPoint);
-			if (progressPoint.getValue() != startCount) {
-				VM.sysWrite("\nthroughput-point\tname=" + progressPoint.getKey() + "\tdelta="
-						+ (progressPoint.getValue() - startCount));
-				System.out.print("\nthroughput-point\tname=" + progressPoint.getKey() + "\tdelta="
-						+ (progressPoint.getValue() - startCount));
+		if (startCounts != null) {
+			ProgressPoints.beginReport();
+			Map<String, Integer> currentPPCounts = new HashMap<String, Integer>();
+			currentPPCounts.putAll(ProgressPoints.allCounts());
+			for (Entry<String, Integer> progressPoint : currentPPCounts.entrySet()) {
+				String thisProgPoint = progressPoint.getKey();
+				if (thisProgPoint != null) {
+					Integer startCount = startCounts.get(thisProgPoint);
+					if (startCount != null && progressPoint.getValue() != startCount) {
+						VM.sysWrite("\nthroughput-point\tname=" + progressPoint.getKey() + "\tdelta="
+								+ (progressPoint.getValue() - startCount));
+						System.out.print("\nthroughput-point\tname=" + progressPoint.getKey() + "\tdelta="
+								+ (progressPoint.getValue() - startCount));
+					}
+				}
 			}
 		}
 		ProgressPoints.endReport();
@@ -352,10 +357,10 @@ public class Coff {
 	}
 
 	public synchronized static void beginProfilingThread(RVMThread t) {
-		applicationThreads.add(t);
+		// applicationThreads.add(t);
 	}
 
 	public synchronized static void stopProfilingThread(RVMThread t) {
-		applicationThreads.remove(t);
+		// applicationThreads.remove(t);
 	}
 }
