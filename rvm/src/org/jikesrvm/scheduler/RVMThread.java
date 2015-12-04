@@ -82,6 +82,8 @@ import org.vmmagic.unboxed.Address;
 import org.vmmagic.unboxed.Offset;
 import org.vmmagic.unboxed.Word;
 
+import coff.Coff;
+
 /**
  * A generic java thread's execution context.
  * <p>
@@ -2662,6 +2664,8 @@ public final class RVMThread extends ThreadContext implements Constants {
 		}
 	}
 
+	private boolean isBeingProfiled;
+
 	/**
 	 * Start execution of 'this' by putting it on the appropriate queue of an
 	 * unspecified virtual processor.
@@ -2682,6 +2686,12 @@ public final class RVMThread extends ThreadContext implements Constants {
 			VM.sysWriteln("Thread #", threadSlot, " starting!");
 		sysCall.sysThreadCreate(Magic.objectAsAddress(this), contextRegisters.ip,
 				contextRegisters.getInnermostFramePointer());
+
+		if (!this.isBootThread() && !this.daemon && !this.isSystemThread()) {
+			Coff.beginProfilingThread(this);
+			this.isBeingProfiled = true;
+		}
+
 	}
 
 	/**
@@ -2728,6 +2738,12 @@ public final class RVMThread extends ThreadContext implements Constants {
 		if (daemon) {
 			numActiveDaemons -= 1;
 		}
+
+		if (this.isBeingProfiled) {
+			Coff.stopProfilingThread(this);
+			this.isBeingProfiled = false;
+		}
+
 		if (traceAcct)
 			VM.sysWriteln("active = ", numActiveThreads, ", daemons = ", numActiveDaemons);
 		if ((numActiveDaemons == numActiveThreads) && (VM.mainThread != null) && VM.mainThread.launched) {

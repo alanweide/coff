@@ -22,17 +22,22 @@ public class ProgressPoints {
 		// }
 		// }
 		if (coffEnabled) {
-			new Thread(new Runnable() {
-				@Override
-				public void run() {
-					if (progressPointCounts.containsKey(name)) {
-						int curCount = progressPointCounts.get(name);
-						progressPointCounts.put(name, 1 + curCount);
-					} else {
-						progressPointCounts.put(name, 1);
-					}
-				}
-			}).start();
+			// new Thread(new Runnable() {
+			// @Override
+			// public void run() {
+			// handlProgressPoint(name);
+			// }
+			// }).start();
+			handlProgressPoint(name);
+		}
+	}
+
+	private static void handlProgressPoint(String name) {
+		if (progressPointCounts.containsKey(name)) {
+			int curCount = progressPointCounts.get(name);
+			progressPointCounts.put(name, 1 + curCount);
+		} else {
+			progressPointCounts.put(name, 1);
 		}
 	}
 

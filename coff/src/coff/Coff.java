@@ -44,7 +44,7 @@ public class Coff {
 
 	private static final long NANOSEC_PER_MILLISEC = 1000000L;
 
-	private static List<RVMThread> applicationThreads;
+	private static List<RVMThread> applicationThreads = new ArrayList<RVMThread>();
 	private static int[] curThreadCounters;
 	private static Map<String, Integer> totalSamplesByLine;
 	private static Map<String, Integer> startCounts;
@@ -88,6 +88,8 @@ public class Coff {
 					}
 					sysCall.sysNanoSleep(COOLDOWN_TIME * NANOSEC_PER_MILLISEC);
 				}
+				if (DEBUG)
+					VM.sysWriteln("Coff finished");
 			}
 		});
 		coffThread.start();
@@ -123,32 +125,43 @@ public class Coff {
 			if (DEBUG)
 				VM.sysWriteln("threads locked for sample");
 			List<List<Element>> usefulStacks = new ArrayList<List<Element>>();
-			applicationThreads = new ArrayList<RVMThread>();
-			for (int j = 0; j < RVMThread.numThreads; j++) {
-				RVMThread thr = RVMThread.threads[j]; // sometimes throws
-														// abnormal termination
-														// of RVMs
-				if (thr != null && thr.isAlive() && !thr.isBootThread() && !thr.isDaemonThread()
-						&& !thr.isSystemThread()) {
-					if (DEBUG)
-						VM.sysWriteln("about to handshake with thread " + thr.getName());
-					thr.beginPairHandshake();
-					if (DEBUG)
-						VM.sysWriteln("did handshake");
-					if (thr.contextRegisters != null && !thr.ignoreHandshakesAndGC()) {
-						List<Element> stack = RVMThread.getStack(thr.contextRegisters.getInnermostFramePointer());
-						applicationThreads.add(thr);
-						usefulStacks.add(stack);
-					}
-					thr.endPairHandshake();
-					// if (thr.contextRegisters != null &&
-					// !thr.ignoreHandshakesAndGC()) {
-					// List<Element> stack = RVMThread.pauseAndGetStack(thr);
-					// applicationThreads.add(thr);
-					// usefulStacks.add(stack);
-					// }
+			for (RVMThread thr : applicationThreads) {
+				thr.beginPairHandshake();
+				if (thr.contextRegisters != null && !thr.ignoreHandshakesAndGC()) {
+					List<Element> stack = RVMThread.getStack(thr.contextRegisters.getInnermostFramePointer());
+					usefulStacks.add(stack);
 				}
+				thr.endPairHandshake();
 			}
+			// applicationThreads = new ArrayList<RVMThread>();
+			// for (int j = 0; j < RVMThread.numThreads; j++) {
+			// RVMThread thr = RVMThread.threads[j]; // sometimes throws
+			// // abnormal termination
+			// // of RVMs
+			// if (thr != null && thr.isAlive() && !thr.isBootThread() &&
+			// !thr.isDaemonThread()
+			// && !thr.isSystemThread()) {
+			// if (DEBUG)
+			// VM.sysWriteln("about to handshake with thread " + thr.getName());
+			// thr.beginPairHandshake();
+			// if (DEBUG)
+			// VM.sysWriteln("did handshake");
+			// if (thr.contextRegisters != null && !thr.ignoreHandshakesAndGC())
+			// {
+			// List<Element> stack =
+			// RVMThread.getStack(thr.contextRegisters.getInnermostFramePointer());
+			// applicationThreads.add(thr);
+			// usefulStacks.add(stack);
+			// }
+			// thr.endPairHandshake();
+			// // if (thr.contextRegisters != null &&
+			// // !thr.ignoreHandshakesAndGC()) {
+			// // List<Element> stack = RVMThread.pauseAndGetStack(thr);
+			// // applicationThreads.add(thr);
+			// // usefulStacks.add(stack);
+			// // }
+			// }
+			// }
 			RVMThread.acctLock.unlock();
 
 			/*
@@ -279,7 +292,7 @@ public class Coff {
 		return numSamplesInMethod;
 	}
 
-	private static void addDelays(double optimizationLevel) {
+	private synchronized static void addDelays(double optimizationLevel) {
 		for (int threadCounter : curThreadCounters) {
 			curGlobalCounter = Math.max(curGlobalCounter, threadCounter);
 		}
@@ -338,11 +351,11 @@ public class Coff {
 
 	}
 
-	public static void beginProfilingThread(RVMThread t) {
+	public synchronized static void beginProfilingThread(RVMThread t) {
 		applicationThreads.add(t);
 	}
 
-	public static void stopProfilingThread(RVMThread t) {
+	public synchronized static void stopProfilingThread(RVMThread t) {
 		applicationThreads.remove(t);
 	}
 }
