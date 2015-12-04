@@ -10,29 +10,34 @@ public class ProgressPoints {
 	private volatile static boolean experimentInProgress = false;
 
 	public static void CoffProgressNamed(final String name) {
-		if (experimentInProgress) {
-			try {
-				ProgressPoints.class.wait();
-			} catch (IllegalMonitorStateException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
+		// if (experimentInProgress) {
+		// try {
+		// ProgressPoints.class.wait();
+		// } catch (IllegalMonitorStateException e) {
+		// // TODO Auto-generated catch block
+		// e.printStackTrace();
+		// } catch (InterruptedException e) {
+		// // TODO Auto-generated catch block
+		// e.printStackTrace();
+		// }
+		// }
 		if (coffEnabled) {
-			new Thread(new Runnable() {
-				@Override
-				public void run() {
-					if (progressPointCounts.containsKey(name)) {
-						int curCount = progressPointCounts.get(name);
-						progressPointCounts.put(name, 1 + curCount);
-					} else {
-						progressPointCounts.put(name, 1);
-					}
-				}
-			}).start();
+			// new Thread(new Runnable() {
+			// @Override
+			// public void run() {
+			// handlProgressPoint(name);
+			// }
+			// }).start();
+			handlProgressPoint(name);
+		}
+	}
+
+	private static void handlProgressPoint(String name) {
+		if (progressPointCounts.containsKey(name)) {
+			int curCount = progressPointCounts.get(name);
+			progressPointCounts.put(name, 1 + curCount);
+		} else {
+			progressPointCounts.put(name, 1);
 		}
 	}
 
